@@ -5,7 +5,8 @@ using System;
 using System.Linq;
 
 [Serializable]
-public class SpawnerObject {
+public class SpawnerObject
+{
     public GameObject gameObject;
     public int amount;
 }
@@ -23,7 +24,7 @@ public class Spawner : MonoBehaviour
         Invoke("Spawn", spawnRate);
     }
 
-    void Spawn() 
+    void Spawn()
     {
         //take a random object from the dictionary
         var randomIndex = UnityEngine.Random.Range(0, objectsToSpawn.Length);
@@ -33,7 +34,7 @@ public class Spawner : MonoBehaviour
         Instantiate(randomEntry.gameObject, transform.position, transform.rotation);
 
         //subtract one from the amount of objects to spawn
-        ;
+        randomEntry.amount--;
 
         //if there are no more objects to spawn, remove it from the dictionary
         if (randomEntry.amount == 0)

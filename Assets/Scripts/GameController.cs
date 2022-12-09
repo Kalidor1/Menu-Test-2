@@ -8,7 +8,8 @@ using UnityEngine.UI;
 
 public class GameController : Singleton<GameController>
 {
-    [Header("Game States")] [SerializeField]
+    [Header("Game States")]
+    [SerializeField]
     public int points = 0;
     [SerializeField] private int level = 0;
     [SerializeField] private int maxLevel = 5;
@@ -16,9 +17,10 @@ public class GameController : Singleton<GameController>
     [SerializeField] private bool isPaused;
 
 
-    [Header("UI")] [SerializeField] private GameObject gameUi;
+    [Header("UI")][SerializeField] private GameObject gameUi;
     [SerializeField] private GameObject pauseUi;
     [SerializeField] private TextMeshProUGUI levelText;
+    [SerializeField] private TextMeshProUGUI healthText;
     [SerializeField] private TextMeshProUGUI diedText;
     [SerializeField] private TextMeshProUGUI finishedText;
     [SerializeField] private GameObject restartButton;
@@ -33,12 +35,16 @@ public class GameController : Singleton<GameController>
 
     private GameState _prePauseState = GameState.Starting;
 
+    private Health playerHealth;
+
     private void Awake()
     {
         if (!ThisIsTheSingletonInstance())
         {
             return;
         }
+
+        //Get player by tag
     }
 
     private void Start()
@@ -65,6 +71,17 @@ public class GameController : Singleton<GameController>
         {
             return;
         }
+        var player = GameObject.FindGameObjectWithTag("Player");
+        playerHealth = player.GetComponent<Health>();
+        if (playerHealth.IsDead)
+        {
+            healthText.text = "0";
+        }
+        else
+        {
+            healthText.text = playerHealth.CurrentHealth.ToString();
+        }
+
     }
 
     //  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ PUBLIC  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -158,8 +175,8 @@ public class GameController : Singleton<GameController>
 
     private void UpdateUI()
     {
-        levelText.SetText($"{level} / {maxLevel}");
-  
+        healthText.text = playerHealth.CurrentHealth.ToString();
+
 
         switch (GameState)
         {

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
     Rigidbody2D body;
 
     private float horizontal;
@@ -13,22 +12,80 @@ public class PlayerController : MonoBehaviour
     public float runSpeed = 20.0f;
     Vector2 mousePos;
 
+    public float invincibilityTime = 2.0f;
+
+    private Health playerHealth;
+    private Inventory playerInventory;
+
+    private GameObject itemInReach;
+
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+        playerHealth = GetComponent<Health>();
+
+        playerInventory = GetComponent<Inventory>();
     }
 
     void Update()
     {
- 
         horizontal = Input.GetAxisRaw("Horizontal"); // -1 is left
         vertical = Input.GetAxisRaw("Vertical"); // -1 is down
+
+
+        if (playerHealth.IsDead)
+        {
+            GameController.Instance.PlayerHealthReachedZero();
+        }
+
+        if (Input.GetKeyDown(KeyCode.E) && itemInReach != null)
+        {
+            Debug.Log("Inventory: " + playerInventory.items.Count);
+
+            playerInventory.AddItem(itemInReach.GetComponent<Item>().itemName);
+            Destroy(itemInReach);
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy") && gameObject.layer != 10)
+        {
+            StartCoroutine(Invincibility());
+            playerHealth.TakeDamage(1);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Item"))
+        {
+            itemInReach = collision.gameObject;
+        }
+    }
+
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy") && gameObject.layer != 10)
+        {
+            StartCoroutine(Invincibility());
+            playerHealth.TakeDamage(1);
+        }
+    }
+
+    IEnumerator Invincibility()
+    {
+        gameObject.layer = 10; // Invincible layer
+        yield return new WaitForSeconds(invincibilityTime);
+        gameObject.layer = 0; // Default layer
+
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
     }
 
     void FixedUpdate()
     {
-        if (horizontal != 0 && vertical != 0) 
+        if (horizontal != 0 && vertical != 0)
         {
             // limit movement speed diagonally
             horizontal *= moveLimiter;
@@ -40,7 +97,8 @@ public class PlayerController : MonoBehaviour
         RotateToMousePos();
     }
 
-    public void RotateToMousePos() {
+    public void RotateToMousePos()
+    {
 
         Vector2 dirMousePos = mousePos - body.position;
     }

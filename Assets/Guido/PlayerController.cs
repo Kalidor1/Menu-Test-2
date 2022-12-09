@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     private float vertical;
     private float moveLimiter = 0.7f;
     public float runSpeed = 20.0f;
+    Vector2 mousePos;
 
     public float invincibilityTime = 2.0f;
 
@@ -30,6 +31,7 @@ public class PlayerController : MonoBehaviour
     {
         horizontal = Input.GetAxisRaw("Horizontal"); // -1 is left
         vertical = Input.GetAxisRaw("Vertical"); // -1 is down
+
 
         if (playerHealth.IsDead)
         {
@@ -76,6 +78,9 @@ public class PlayerController : MonoBehaviour
         gameObject.layer = 10; // Invincible layer
         yield return new WaitForSeconds(invincibilityTime);
         gameObject.layer = 0; // Default layer
+
+        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
     }
 
     void FixedUpdate()
@@ -88,5 +93,13 @@ public class PlayerController : MonoBehaviour
         }
 
         body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
+
+        RotateToMousePos();
+    }
+
+    public void RotateToMousePos()
+    {
+
+        Vector2 dirMousePos = mousePos - body.position;
     }
 }

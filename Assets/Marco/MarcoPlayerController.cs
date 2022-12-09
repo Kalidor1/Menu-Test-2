@@ -25,28 +25,26 @@ Rigidbody2D body;
  
         horizontal = Input.GetAxisRaw("Horizontal"); // -1 is left
         vertical = Input.GetAxisRaw("Vertical"); // -1 is down
-        // var direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        // float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        // Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        // transform.rotation = Quaternion.Slerp(transform.rotation, rotation, runSpeed * Time.deltaTime);
         
-        Vector3 direction;
+        
         if(useGamepadRotation)
         {
-            direction = new Vector3(Input.GetAxis("RightStickHorizontal"), -Input.GetAxis("RightStickVertical"), 0);
-            Debug.Log(direction.x);
-            Debug.Log(direction.y);
+            var direction = new Vector2(Input.GetAxis("RightStickHorizontal"), Input.GetAxis("RightStickVertical"));
+            if(direction.magnitude > 0.5f){
+                Vector3 curRotation = Vector3.left * direction.x + Vector3.up * direction.y;
+                Quaternion playerRotation = Quaternion.LookRotation(curRotation, Vector3.forward);
+                body.SetRotation(playerRotation);
+            }
         }
         else
         {
-            direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-            Debug.Log(direction.x);
-            Debug.Log(direction.y);
+            var direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90;
+            Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, runSpeed * Time.deltaTime);
         }
 
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, runSpeed * Time.deltaTime);
+        
     }
 
     void FixedUpdate()

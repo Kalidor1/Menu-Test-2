@@ -197,11 +197,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4869189118968267871, guid: 7a19b74a940ed444c8e6376b05b14e27, type: 3}
       propertyPath: rotationSpeed
-      value: 8
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4869189118968267871, guid: 7a19b74a940ed444c8e6376b05b14e27, type: 3}
       propertyPath: useGamepadRotation
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:
@@ -234,8 +234,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 906611259}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.68, y: -0.257, z: 0}
-  m_LocalScale: {x: 1.1822447, y: 0.09477725, z: 1}
+  m_LocalPosition: {x: 0.229, y: 0.707, z: 0}
+  m_LocalScale: {x: 0.10303064, y: 1.1943355, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1705639160}

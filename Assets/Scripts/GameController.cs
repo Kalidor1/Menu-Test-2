@@ -20,7 +20,6 @@ public class GameController : Singleton<GameController>
     [Header("UI")][SerializeField] private GameObject gameUi;
     [SerializeField] private GameObject pauseUi;
     [SerializeField] private TextMeshProUGUI levelText;
-    [SerializeField] private TextMeshProUGUI healthText;
     [SerializeField] private TextMeshProUGUI diedText;
     [SerializeField] private TextMeshProUGUI finishedText;
     [SerializeField] private GameObject restartButton;
@@ -28,14 +27,19 @@ public class GameController : Singleton<GameController>
 
 
     [Header("Prefabs and Stuff")]
-
     public GameObject[] levels;
-
     public GameState GameState => gameState;
-
     private GameState _prePauseState = GameState.Starting;
 
-    private Health playerHealth;
+    [Header("Health UI")]
+
+    public Health playerHealth;
+    public Image[] healthImages;
+    public Sprite fullHeart;
+    public Sprite emptyHeart;
+
+    [Header("Inventory")]
+    private Inventory inventory;
 
     private void Awake()
     {
@@ -44,7 +48,8 @@ public class GameController : Singleton<GameController>
             return;
         }
 
-        //Get player by tag
+        inventory = GetComponent<Inventory>();
+        playerHealth = GetComponent<Health>();
     }
 
     private void Start()
@@ -71,17 +76,40 @@ public class GameController : Singleton<GameController>
         {
             return;
         }
-        var player = GameObject.FindGameObjectWithTag("Player");
-        playerHealth = player.GetComponent<Health>();
-        if (playerHealth.IsDead)
-        {
-            healthText.text = "0";
-        }
-        else
-        {
-            healthText.text = playerHealth.CurrentHealth.ToString();
-        }
 
+        RenderPlayerState();
+    }
+
+    private void RenderPlayerState()
+    {
+        if (playerHealth != null)
+        {
+            // Render health
+            var health = playerHealth.CurrentHealth;
+            var maxHealth = playerHealth.MaxHealth;
+
+
+            for (int i = 0; i < healthImages.Length; i++)
+            {
+                if (i < health)
+                {
+                    healthImages[i].sprite = fullHeart;
+                }
+                else
+                {
+                    healthImages[i].sprite = emptyHeart;
+                }
+
+                if (i < maxHealth)
+                {
+                    healthImages[i].enabled = true;
+                }
+                else
+                {
+                    healthImages[i].enabled = false;
+                }
+            }
+        }
     }
 
     //  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ PUBLIC  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -175,9 +203,6 @@ public class GameController : Singleton<GameController>
 
     private void UpdateUI()
     {
-        healthText.text = playerHealth.CurrentHealth.ToString();
-
-
         switch (GameState)
         {
             case GameState.PlayerDied:

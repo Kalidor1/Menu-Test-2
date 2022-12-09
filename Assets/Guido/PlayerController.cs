@@ -14,11 +14,16 @@ public class PlayerController : MonoBehaviour
     public float invincibilityTime = 2.0f;
 
     private Health playerHealth;
+    private Inventory playerInventory;
+
+    private GameObject itemInReach;
 
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
         playerHealth = GetComponent<Health>();
+
+        playerInventory = GetComponent<Inventory>();
     }
 
     void Update()
@@ -30,6 +35,14 @@ public class PlayerController : MonoBehaviour
         {
             GameController.Instance.PlayerHealthReachedZero();
         }
+
+        if (Input.GetKeyDown(KeyCode.E) && itemInReach != null)
+        {
+            Debug.Log("Inventory: " + playerInventory.items.Count);
+
+            playerInventory.AddItem(itemInReach.GetComponent<Item>().itemName);
+            Destroy(itemInReach);
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -38,6 +51,14 @@ public class PlayerController : MonoBehaviour
         {
             StartCoroutine(Invincibility());
             playerHealth.TakeDamage(1);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Item"))
+        {
+            itemInReach = collision.gameObject;
         }
     }
 

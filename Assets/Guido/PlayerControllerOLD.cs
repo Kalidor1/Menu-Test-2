@@ -18,9 +18,6 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
-
-        // Access GameController singleton 
-        GameController.Instance.Test();
     }
 
     void Update()
@@ -36,7 +33,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E) && itemInReach != null)
         {
-            GameController.Instance.inventory.AddItem(new Item(itemInReach.GetComponent<Item>()));
+            GameController.Instance.inventory.AddItem(new InventoryItem(itemInReach.GetComponent<Item>()));
             Destroy(itemInReach);
         }
     }
@@ -74,7 +71,6 @@ public class PlayerController : MonoBehaviour
         gameObject.layer = 0; // Default layer
 
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
     }
 
     void FixedUpdate()

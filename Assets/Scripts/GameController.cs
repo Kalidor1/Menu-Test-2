@@ -39,7 +39,18 @@ public class GameController : Singleton<GameController>
 
     [Header("Inventory")]
     public Inventory inventory;
+    public bool atAltar;
+    public GameObject altarButtonContainer;
+    public GameObject altarButton;
     public TextMeshProUGUI inventoryText;
+
+    [Header("Spawner")]
+    public SpawnerType spawnerActive = SpawnerType.Enemy;
+
+    [Header("Day/Night Cycle")]
+    public float dayLength = 1f;
+    public float nightLength = 1f;
+    public TextMeshProUGUI dayNightText;
 
     private void Awake()
     {
@@ -63,6 +74,28 @@ public class GameController : Singleton<GameController>
         _prePauseState = gameState;
         SetPause(false);
         gameState = GameState.Playing;
+
+        StartCoroutine(DayNightCycle());
+    }
+
+    IEnumerator DayNightCycle()
+    {
+        while (true)
+        {
+            spawnerActive = SpawnerType.Item;
+            for (int i = 0; i < dayLength; i++)
+            {
+                dayNightText.text = "Day " + (i + 1);
+                yield return new WaitForSeconds(1);
+            }
+
+            spawnerActive = SpawnerType.Enemy;
+            for (int i = 0; i < nightLength; i++)
+            {
+                dayNightText.text = "Night " + (i + 1);
+                yield return new WaitForSeconds(1);
+            }
+        }
     }
 
     private void Update()
@@ -110,14 +143,14 @@ public class GameController : Singleton<GameController>
             }
         }
 
-        if (inventory != null)
+        if (inventory != null && !atAltar)
         {
             // Render inventory
             var items = inventory.items;
             var text = "";
             foreach (var item in items)
             {
-                text += item.name + $" ({item.description})";
+                text += item.Name + $" ({item.Description})";
             }
 
             inventoryText.text = text;
@@ -214,8 +247,33 @@ public class GameController : Singleton<GameController>
         }
     }
 
-    private void UpdateUI()
+    public void UpdateUI()
     {
+        if (atAltar)
+        {
+            // Remove old buttons
+            foreach (Transform child in altarButtonContainer.transform)
+            {
+                Destroy(child.gameObject);
+            }
+
+            // Render inventory as buttons
+            foreach (var item in inventory.items)
+            {
+                var button = Instantiate(altarButton, altarButtonContainer.transform);
+                //move button down a bit
+                var offset = 30 * inventory.items.IndexOf(item);
+                button.transform.position += new Vector3(0, -offset, 0);
+                button.GetComponentInChildren<TextMeshProUGUI>().text = item.Name;
+                button.GetComponentInChildren<Button>().onClick.AddListener(() =>
+                {
+                    inventory.RemoveItem(item);
+                    Destroy(button);
+                    UpdateUI();
+                });
+            }
+        }
+
         switch (GameState)
         {
             case GameState.PlayerDied:
@@ -233,9 +291,9 @@ public class GameController : Singleton<GameController>
             case GameState.Paused:
             case GameState.Changing:
             default:
-                diedText.gameObject.SetActive(false);
-                finishedText.gameObject.SetActive(false);
-                restartButton.SetActive(false);
+                if (diedText?.gameObject != null) diedText.gameObject.SetActive(false);
+                if (finishedText?.gameObject != null) finishedText.gameObject.SetActive(false);
+                if (restartButton != null) restartButton.SetActive(false);
                 break;
         }
     }

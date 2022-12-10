@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-
     public string name = "Ziege";
     public string description = "Eine Ziege";
     public string property;
@@ -15,13 +14,6 @@ public class Item : MonoBehaviour
     private GUIStyle guiStyleBack;
     private bool visible = false;
 
-    public Item(Item item)
-    {
-        name = item.name;
-        description = item.description;
-        property = item.property;
-        value = item.value;
-    }
 
     public void Start()
     {

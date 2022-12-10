@@ -26,16 +26,17 @@ public class CropController : MonoBehaviour
 
     void Update()
     {
-        if(health <= 0)
+        if (health <= 0)
         {
-            Destroy(gameObject);
+            SceneController.Instance.LoadScene("GameOver");
         }
     }
 
-    void OnGUI() {
+    void OnGUI()
+    {
         var text = health.ToString() + "/" + initialHealth.ToString();
         Vector2 pos = Camera.main.WorldToScreenPoint(transform.position);
-            GUI.Label(new Rect(pos.x - 50, Screen.height - pos.y - 50, 100, 100), text, guiStyleBack);
-            GUI.Label(new Rect(pos.x - 50, Screen.height - pos.y - 50, 100, 100), text, guiStyleFore);
+        GUI.Label(new Rect(pos.x - 50, Screen.height - pos.y - 50, 100, 100), text, guiStyleBack);
+        GUI.Label(new Rect(pos.x - 50, Screen.height - pos.y - 50, 100, 100), text, guiStyleFore);
     }
 }

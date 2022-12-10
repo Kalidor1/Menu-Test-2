@@ -62,7 +62,9 @@ public class MarcoPlayerController : MonoBehaviour
         // if e is pressed or x on gamepad and item is in reach
         if ((Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Joystick1Button2)) && itemInReach != null)
         {
-            GameController.Instance.inventory.AddItem(new InventoryItem(itemInReach.GetComponent<Item>()));
+            var item = itemInReach.GetComponent<Item>();
+            var sprite = itemInReach.GetComponent<SpriteRenderer>().sprite;
+            GameController.Instance.inventory.AddItem(new InventoryItem(item, sprite));
             Destroy(itemInReach);
         }
     }

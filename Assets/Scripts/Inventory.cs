@@ -9,14 +9,16 @@ public class InventoryItem
     public string Property { get; set; }
     public float Value { get; set; }
     public Sprite PopUp { get; set; }
+    public Sprite Icon { get; set; }
 
-    public InventoryItem(Item item)
+    public InventoryItem(Item item, Sprite icon)
     {
         Name = item.name;
         Description = item.description;
         Property = item.property;
         Value = item.value;
         PopUp = item.popUp;
+        Icon = icon;
     }
 }
 

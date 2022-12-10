@@ -204,7 +204,7 @@ public class GameController : Singleton<GameController>
             var text = "";
             foreach (var item in items)
             {
-                text += item.Name + $" ({item.Description})";
+                text += item.Name + $" ({item.Description})\n";
             }
 
             inventoryText.text = text;
@@ -220,7 +220,7 @@ public class GameController : Singleton<GameController>
     public void PlayerHealthReachedZero()
     {
         gameState = GameState.PlayerDied;
-        Debug.Log(nameof(PlayerHealthReachedZero));
+        SceneController.Instance.LoadScene("GameOver");
         UpdateUI();
     }
 
@@ -230,7 +230,6 @@ public class GameController : Singleton<GameController>
         Debug.Log("Finished");
         UpdateUI();
     }
-
 
     //  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ PRIVATE  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     private void SetPause(bool paused)
@@ -324,7 +323,10 @@ public class GameController : Singleton<GameController>
 
     private IEnumerator ShowPopup(InventoryItem item)
     {
+        //change texture sheet to item texture sheet
+        altarParticles.textureSheetAnimation.SetSprite(0, item.Icon);
         altarParticles.Play();
+        
         //Create copy of popup
         var popup = Instantiate(altarPopup, altarPopup.transform.parent);
         popup.SetActive(true);
@@ -378,7 +380,7 @@ public class GameController : Singleton<GameController>
                 button.GetComponentInChildren<Button>().onClick.AddListener(() =>
                 {
                     //DIE 
-                    Debug.Log("You killed yourself");
+                    SceneController.Instance.LoadScene("GameWin");
                 });
             }
         }

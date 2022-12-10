@@ -26,6 +26,7 @@ public class Spawner : MonoBehaviour
     //The rate at which to spawn in seconds
     public float spawnRate = 1f;
     public SpawnerType type;
+    public string targetTag;
 
     void Start()
     {
@@ -49,7 +50,7 @@ public class Spawner : MonoBehaviour
         instance.SetActive(true);
         if (type == SpawnerType.Enemy)
         {
-            var player = GameObject.FindGameObjectWithTag("Player");
+            var player = GameObject.FindGameObjectWithTag(targetTag);
             instance.GetComponent<AIDestinationSetter>().target = player.transform;
         }
 

@@ -53,11 +53,20 @@ public class GameController : Singleton<GameController>
     public float nightLength = 1f;
     public TextMeshProUGUI dayNightText;
     public bool canEnter = false;
+    public bool isInHouse = false;
 
     [Header("Public Stats")]
     public float playerSpeed = 5f;
+    public float playerInvincibilityTime = 1f;
+    public float attackSpeed = 0.5f;
+    public float attackRange = 1f;
+
+    [Header("What ever")]
     private int karma = 0;
+    // Easter egg where you can sac yourself
     public int karmaEasterEgg = 1;
+    public GameObject Player;
+    public GameObject Spawn;
 
     private void Awake()
     {
@@ -104,6 +113,8 @@ public class GameController : Singleton<GameController>
                 yield return new WaitForSeconds(1);
             }
 
+            //move player to spawn
+            if (isInHouse) Player.transform.position = Spawn.transform.position;
             canEnter = false;
             spawnerActive = SpawnerType.Enemy;
             for (int i = 0; i < nightLength; i++)
@@ -159,7 +170,13 @@ public class GameController : Singleton<GameController>
             }
         }
 
-        if (inventory != null && !atAltar)
+        if (atAltar)
+        {
+            inventoryText.text = "";
+            return;
+        }
+
+        if (inventory != null)
         {
             // Render inventory
             var items = inventory.items;
@@ -171,6 +188,7 @@ public class GameController : Singleton<GameController>
 
             inventoryText.text = text;
         }
+
     }
 
     //  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ PUBLIC  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -273,14 +291,15 @@ public class GameController : Singleton<GameController>
 
     public void UpdateUI()
     {
+        // Remove old buttons
+        Debug.Log("delete buttons");
+        foreach (Transform child in altarButtonContainer.transform)
+        {
+            Destroy(child.gameObject);
+        }
+
         if (atAltar)
         {
-            // Remove old buttons
-            foreach (Transform child in altarButtonContainer.transform)
-            {
-                Destroy(child.gameObject);
-            }
-
             // Render inventory as buttons
             foreach (var item in inventory.items)
             {

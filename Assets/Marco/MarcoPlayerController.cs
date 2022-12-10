@@ -5,19 +5,12 @@ using UnityEngine;
 public class MarcoPlayerController : MonoBehaviour
 {
     Rigidbody2D body;
-
     private float horizontal;
     private float vertical;
     private float moveLimiter = 0.7f;
-
-    public float runSpeed = 20.0f;
-
     public float rotationSpeed = 0.5f;
     public bool useGamepadRotation = false;
-
-    public float invincibilityTime = 2.0f;
     Vector2 mousePos;
-
     private GameObject itemInReach;
 
     void Start()
@@ -35,17 +28,22 @@ public class MarcoPlayerController : MonoBehaviour
         if (useGamepadRotation)
         {
             //Rotate with right stick
-            var direction = new Vector2(Input.GetAxis("RightStickHorizontal"), Input.GetAxis("RightStickVertical"));
-            if (direction.sqrMagnitude > 0.0f)
+            var direction = new Vector2(Input.GetAxis("RightStickVertical"), Input.GetAxis("RightStickHorizontal"));
+
+            // Check for deadzone
+            if (direction.magnitude > 0.1)
             {
+                // Look at direction
                 var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-                //invert the angle
-
-                angle = 90 - angle;
-                transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+                // Rotate towards direction
+                body.rotation = angle;
             }
-
+            else
+            {
+                //Prevent rotation
+                body.rotation = 0;
+            }
         }
         else
         {
@@ -61,7 +59,8 @@ public class MarcoPlayerController : MonoBehaviour
             GameController.Instance.PlayerHealthReachedZero();
         }
 
-        if (Input.GetKeyDown(KeyCode.E) && itemInReach != null)
+        // if e is pressed or x on gamepad and item is in reach
+        if ((Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Joystick1Button2)) && itemInReach != null)
         {
             GameController.Instance.inventory.AddItem(new InventoryItem(itemInReach.GetComponent<Item>()));
             Destroy(itemInReach);
@@ -118,7 +117,7 @@ public class MarcoPlayerController : MonoBehaviour
     IEnumerator Invincibility()
     {
         gameObject.layer = 10; // Invincible layer
-        yield return new WaitForSeconds(invincibilityTime);
+        yield return new WaitForSeconds(GameController.Instance.playerInvincibilityTime);
         gameObject.layer = 0; // Default layer
 
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -136,7 +135,7 @@ public class MarcoPlayerController : MonoBehaviour
 
 
 
-        body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
+        body.velocity = new Vector2(horizontal * GameController.Instance.playerSpeed, vertical * GameController.Instance.playerSpeed);
 
         RotateToMousePos();
 

@@ -30,8 +30,9 @@ public class DoorController : MonoBehaviour
 
     void Update()
     {
-        if (playerIsNear && Input.GetKeyDown(KeyCode.E) && GameController.Instance.canEnter)
+        if (playerIsNear && (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Joystick1Button2)) && GameController.Instance.canEnter)
         {
+            GameController.Instance.isInHouse = !GameController.Instance.isInHouse;
             GameObject.FindGameObjectWithTag("Player").transform.position = targetPosition.transform.position;
         }
     }

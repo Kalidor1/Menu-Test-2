@@ -56,6 +56,8 @@ public class GameController : Singleton<GameController>
 
     [Header("Public Stats")]
     public float playerSpeed = 5f;
+    private int karma = 0;
+    public int karmaEasterEgg = 1;
 
     private void Awake()
     {
@@ -87,6 +89,13 @@ public class GameController : Singleton<GameController>
     {
         while (true)
         {
+            // Remove all enemies during day
+            var enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            foreach (var enemy in enemies)
+            {
+                Destroy(enemy);
+            }
+
             spawnerActive = SpawnerType.Item;
             canEnter = true;
             for (int i = 0; i < dayLength; i++)
@@ -175,8 +184,6 @@ public class GameController : Singleton<GameController>
         Debug.Log(nameof(PlayerHealthReachedZero));
         UpdateUI();
     }
-
-
 
     public void Finished()
     {
@@ -286,8 +293,23 @@ public class GameController : Singleton<GameController>
                 {
                     inventory.RemoveItem(item);
                     ApplyStats(item);
+                    karma++;
                     Destroy(button);
                     UpdateUI();
+                });
+            }
+
+            if (karma >= karmaEasterEgg)
+            {
+                var button = Instantiate(altarButton, altarButtonContainer.transform);
+                //move button down a bit
+                var offset = 30 * inventory.items.Count;
+                button.transform.position += new Vector3(0, -offset, 0);
+                button.GetComponentInChildren<TextMeshProUGUI>().text = "Yourself";
+                button.GetComponentInChildren<Button>().onClick.AddListener(() =>
+                {
+                    //DIE 
+                    Debug.Log("You killed yourself");
                 });
             }
         }

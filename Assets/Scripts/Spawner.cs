@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using System.Linq;
+using Pathfinding;
 
 [Serializable]
 public class SpawnerObject
@@ -44,7 +45,13 @@ public class Spawner : MonoBehaviour
         var randomEntry = objectsToSpawn[randomIndex];
 
         //spawn the object
-        Instantiate(randomEntry.gameObject, transform.position, transform.rotation);
+        var instance = Instantiate(randomEntry.gameObject, transform.position, transform.rotation);
+        instance.SetActive(true);
+        if (type == SpawnerType.Enemy)
+        {
+            var player = GameObject.FindGameObjectWithTag("Player");
+            instance.GetComponent<AIDestinationSetter>().target = player.transform;
+        }
 
         //subtract one from the amount of objects to spawn
         randomEntry.amount--;

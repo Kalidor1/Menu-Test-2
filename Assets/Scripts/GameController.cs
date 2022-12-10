@@ -56,6 +56,8 @@ public class GameController : Singleton<GameController>
 
     [Header("Public Stats")]
     public float playerSpeed = 5f;
+    private int karma = 0;
+    public int karmaEasterEgg = 1;
 
     private void Awake()
     {
@@ -183,8 +185,6 @@ public class GameController : Singleton<GameController>
         UpdateUI();
     }
 
-
-
     public void Finished()
     {
         gameState = GameState.Finished;
@@ -293,8 +293,23 @@ public class GameController : Singleton<GameController>
                 {
                     inventory.RemoveItem(item);
                     ApplyStats(item);
+                    karma++;
                     Destroy(button);
                     UpdateUI();
+                });
+            }
+
+            if (karma >= karmaEasterEgg)
+            {
+                var button = Instantiate(altarButton, altarButtonContainer.transform);
+                //move button down a bit
+                var offset = 30 * inventory.items.Count;
+                button.transform.position += new Vector3(0, -offset, 0);
+                button.GetComponentInChildren<TextMeshProUGUI>().text = "Yourself";
+                button.GetComponentInChildren<Button>().onClick.AddListener(() =>
+                {
+                    //DIE 
+                    Debug.Log("You killed yourself");
                 });
             }
         }

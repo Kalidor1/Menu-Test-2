@@ -22,4 +22,9 @@ public class Health : MonoBehaviour
     {
         currentHealth -= damage;
     }
+
+    public void Heal(int heal)
+    {
+        currentHealth += heal;
+    }
 }

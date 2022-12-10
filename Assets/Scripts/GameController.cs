@@ -60,6 +60,8 @@ public class GameController : Singleton<GameController>
     public float playerInvincibilityTime = 1f;
     public float attackSpeed = 0.5f;
     public float attackRange = 1f;
+    public float pitchForkSize = 1f;
+    public bool isBanana = false;
 
     [Header("What ever")]
     private int karma = 0;
@@ -68,7 +70,6 @@ public class GameController : Singleton<GameController>
     public GameObject Player;
     public GameObject Spawn;
     public GameObject altarPopup;
-    public int daysSurvived = 0;
     public ParticleSystem altarParticles;
 
     private void Awake()
@@ -127,6 +128,8 @@ public class GameController : Singleton<GameController>
             }
 
             Hub.Instance.daysSurvived++;
+            dayLength *= 0.9f;
+            nightLength *= 1.1f;
         }
     }
 
@@ -304,13 +307,24 @@ public class GameController : Singleton<GameController>
             case "playerSpeed":
                 playerSpeed += item.Value;
                 break;
+            case "attackSpeed":
+                attackSpeed += item.Value;
+                break;
+            case "attackRange":
+                attackRange += item.Value;
+                break;
+            case "pitchForkSize":
+                pitchForkSize += item.Value;
+                break;
+            case "banana":
+                isBanana = true;
+                break;
         }
     }
 
     private IEnumerator ShowPopup(InventoryItem item)
     {
         altarParticles.Play();
-
         //Create copy of popup
         var popup = Instantiate(altarPopup, altarPopup.transform.parent);
         popup.SetActive(true);
@@ -329,7 +343,6 @@ public class GameController : Singleton<GameController>
     public void UpdateUI()
     {
         // Remove old buttons
-        Debug.Log("delete buttons");
         foreach (Transform child in altarButtonContainer.transform)
         {
             Destroy(child.gameObject);
@@ -351,7 +364,6 @@ public class GameController : Singleton<GameController>
                     StartCoroutine(ShowPopup(item));
                     ApplyStats(item);
                     karma++;
-                    Destroy(button);
                     UpdateUI();
                 });
             }

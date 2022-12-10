@@ -13,6 +13,10 @@ PrefabInstance:
       value: Bananananana
       objectReference: {fileID: 0}
     - target: {fileID: 8415528020633207048, guid: 60ca7726f765e3547953bb95910791cb, type: 3}
+      propertyPath: property
+      value: banana
+      objectReference: {fileID: 0}
+    - target: {fileID: 8415528020633207048, guid: 60ca7726f765e3547953bb95910791cb, type: 3}
       propertyPath: description
       value: Day 100, they still did not notice
       objectReference: {fileID: 0}
@@ -22,7 +26,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: a2d0ba5357c3b6945afde15d7b40ff90, type: 3}
     - target: {fileID: 8415528020633207050, guid: 60ca7726f765e3547953bb95910791cb, type: 3}
       propertyPath: m_Name
-      value: Banana
+      value: Banana Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8415528020633207054, guid: 60ca7726f765e3547953bb95910791cb, type: 3}
       propertyPath: m_RootOrder

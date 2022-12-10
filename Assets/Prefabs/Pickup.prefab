@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2119346028097152118}
   - component: {fileID: 2119346028097152117}
   m_Layer: 0
-  m_Name: Item
+  m_Name: Pickup
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,8 +101,9 @@ MonoBehaviour:
   name: Ziege
   description: "B\xE4\xE4\xE4\xE4h"
   property: playerSpeed
-  value: 10
+  value: 0.1
   popUp: {fileID: 21300000, guid: be9b806df7630784e9aa5cc78db15020, type: 3}
+  isPickup: 0
 --- !u!58 &2119346028097152117
 CircleCollider2D:
   m_ObjectHideFlags: 0

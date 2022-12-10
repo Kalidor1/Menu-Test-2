@@ -282,3 +282,4 @@ MonoBehaviour:
   health: 10
   cropCoolDown: 0.5
   deathParticles: {fileID: 6492137837180955096, guid: c4190e5c25840124db97d6fe814f019f, type: 3}
+  item: {fileID: 111495980540124803, guid: dbf16d28fd1cdca4f8d3c83688f5d8c8, type: 3}

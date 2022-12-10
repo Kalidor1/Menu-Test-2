@@ -80,7 +80,15 @@ public class MarcoPlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Item"))
         {
-            itemInReach = collision.gameObject;
+            if (collision.gameObject.GetComponent<Item>().isPickup)
+            {
+                GameController.Instance.playerHealth.Heal(1);
+                Destroy(collision.gameObject);
+            }
+            else
+            {
+                itemInReach = collision.gameObject;
+            }
         }
 
 

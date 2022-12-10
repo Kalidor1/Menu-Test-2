@@ -69,6 +69,14 @@ PrefabInstance:
       value: Raccoon
       objectReference: {fileID: 0}
     - target: {fileID: 2119346028097152118, guid: 167d888a3e5edf74c8a82ed8a05de5b9, type: 3}
+      propertyPath: value
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2119346028097152118, guid: 167d888a3e5edf74c8a82ed8a05de5b9, type: 3}
+      propertyPath: property
+      value: attackSpeed
+      objectReference: {fileID: 0}
+    - target: {fileID: 2119346028097152118, guid: 167d888a3e5edf74c8a82ed8a05de5b9, type: 3}
       propertyPath: description
       value: meow?
       objectReference: {fileID: 0}

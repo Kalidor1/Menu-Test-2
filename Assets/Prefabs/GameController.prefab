@@ -75,7 +75,7 @@ MonoBehaviour:
   inventoryText: {fileID: 0}
   spawnerActive: 0
   dayLength: 1
-  nightLength: 1
+  nightLength: 2
   dayNightText: {fileID: 0}
   canEnter: 0
   isInHouse: 0
@@ -83,12 +83,12 @@ MonoBehaviour:
   playerInvincibilityTime: 1
   attackSpeed: 0.5
   attackRange: 1
+  pitchForkSize: 0.5
   karmaEasterEgg: 1
   Player: {fileID: 0}
   Spawn: {fileID: 0}
   altarPopup: {fileID: 0}
-  daysSurvived: 0
-  altarParticles: {fileID: 0}
+  altarParticles: {fileID: 6492137837180955096, guid: c4190e5c25840124db97d6fe814f019f, type: 3}
 --- !u!114 &5000381255430973062
 MonoBehaviour:
   m_ObjectHideFlags: 0

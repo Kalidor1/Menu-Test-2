@@ -18,7 +18,6 @@ public class InventoryItem
         Value = item.value;
         PopUp = item.popUp;
     }
-
 }
 
 public class Inventory : MonoBehaviour

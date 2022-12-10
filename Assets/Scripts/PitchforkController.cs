@@ -13,6 +13,7 @@ public class PitchforkController : MonoBehaviour
     private float _slashSpeed = 0.1f;
 
     private Vector3 initialPosition;
+    public Sprite bananaSprite;
 
     void Start()
     {
@@ -22,12 +23,24 @@ public class PitchforkController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.JoystickButton5)) && Time.time > _canAttack)
+        if ((Input.GetMouseButton(0) || Input.GetKeyDown(KeyCode.JoystickButton5)) && Time.time > _canAttack)
         {
             _canAttack = Time.time + GameController.Instance.attackSpeed;
             isExtracting = true;
             transform.localPosition += new Vector3(0f, 0.5f, 0f);
         }
+
+        if (GameController.Instance.isBanana)
+        {
+            GetComponent<SpriteRenderer>().sprite = bananaSprite;
+            transform.localScale = new Vector3(GameController.Instance.pitchForkSize * 0.15f, GameController.Instance.pitchForkSize * 0.15f, GameController.Instance.pitchForkSize * 0.15f);
+        }
+        else
+        {
+            // set scale 
+            transform.localScale = new Vector3(GameController.Instance.pitchForkSize, GameController.Instance.pitchForkSize, GameController.Instance.pitchForkSize);
+        }
+
     }
 
     void FixedUpdate()

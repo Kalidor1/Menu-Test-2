@@ -9,6 +9,7 @@ public class Item : MonoBehaviour
     public string property;
     public float value;
     public Sprite popUp;
+    public bool isPickup = false;
 
     // This is for the tooltip
     private GUIStyle guiStyleFore;
@@ -39,9 +40,18 @@ public class Item : MonoBehaviour
         visible = false;
     }
 
+    public void Update()
+    {
+        if (isPickup)
+        {
+            //move to player
+            transform.position = Vector3.MoveTowards(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position, 0.05f);
+        }
+    }
+
     private void OnGUI()
     {
-        if (visible)
+        if (visible && !isPickup)
         {
             Vector2 pos = Camera.main.WorldToScreenPoint(transform.position);
             GUI.Label(new Rect(pos.x - 50, Screen.height - pos.y - 50, 100, 100), name, guiStyleBack);

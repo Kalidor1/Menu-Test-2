@@ -8,6 +8,7 @@ public class InventoryItem
     public string Description { get; set; }
     public string Property { get; set; }
     public float Value { get; set; }
+    public Sprite PopUp { get; set; }
 
     public InventoryItem(Item item)
     {
@@ -15,6 +16,7 @@ public class InventoryItem
         Description = item.description;
         Property = item.property;
         Value = item.value;
+        PopUp = item.popUp;
     }
 
 }

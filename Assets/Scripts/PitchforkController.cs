@@ -34,8 +34,8 @@ public class PitchforkController : MonoBehaviour
     {
         if (isExtracting && currentExtraction < GameController.Instance.attackRange)
         {
-            currentExtraction += _slashSpeed;
-            transform.localPosition += new Vector3(0f, _slashSpeed, 0f);
+            currentExtraction += GameController.Instance.attackRange / 10f;
+            transform.localPosition += new Vector3(0f, GameController.Instance.attackRange / 10f, 0f);
         }
         else if (isExtracting)
         {

@@ -133,17 +133,13 @@ public class MarcoPlayerController : MonoBehaviour
             vertical *= moveLimiter;
         }
 
-
-
         body.velocity = new Vector2(horizontal * GameController.Instance.playerSpeed, vertical * GameController.Instance.playerSpeed);
 
         RotateToMousePos();
-
     }
 
     public void RotateToMousePos()
     {
-
         Vector2 dirMousePos = mousePos - body.position;
     }
 }

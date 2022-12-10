@@ -67,6 +67,7 @@ public class GameController : Singleton<GameController>
     public int karmaEasterEgg = 1;
     public GameObject Player;
     public GameObject Spawn;
+    public GameObject altarPopup;
 
     private void Awake()
     {
@@ -107,21 +108,34 @@ public class GameController : Singleton<GameController>
 
             spawnerActive = SpawnerType.Item;
             canEnter = true;
-            for (int i = 0; i < dayLength; i++)
+            for (int i = 8; i <= 20; i++)
             {
-                dayNightText.text = "Day " + (i + 1);
-                yield return new WaitForSeconds(1);
+                dayNightText.text = GetTimeText(i) + " (Day)";
+                yield return new WaitForSeconds(dayLength);
             }
 
             //move player to spawn
             if (isInHouse) Player.transform.position = Spawn.transform.position;
             canEnter = false;
             spawnerActive = SpawnerType.Enemy;
-            for (int i = 0; i < nightLength; i++)
+            for (int i = 21; i <= 31; i++)
             {
-                dayNightText.text = "Night " + (i + 1);
-                yield return new WaitForSeconds(1);
+                dayNightText.text = GetTimeText(i) + " (Night)";
+                yield return new WaitForSeconds(nightLength);
             }
+        }
+    }
+
+    private string GetTimeText(int time)
+    {
+        var hour = time % 24;
+        if (hour < 10)
+        {
+            return $"0{hour}:00";
+        }
+        else
+        {
+            return $"{hour}:00";
         }
     }
 
@@ -289,6 +303,23 @@ public class GameController : Singleton<GameController>
         }
     }
 
+    private IEnumerator ShowPopup(InventoryItem item)
+    {
+        //Create copy of popup
+        var popup = Instantiate(altarPopup, altarPopup.transform.parent);
+        popup.SetActive(true);
+
+        //Set sprite of sprite renderer
+        popup.GetComponentInChildren<SpriteRenderer>().sprite = item.PopUp;
+
+        //Add upwards force
+        popup.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 200));
+
+        yield return new WaitForSeconds(2);
+
+        Destroy(popup);
+    }
+
     public void UpdateUI()
     {
         // Remove old buttons
@@ -311,6 +342,7 @@ public class GameController : Singleton<GameController>
                 button.GetComponentInChildren<Button>().onClick.AddListener(() =>
                 {
                     inventory.RemoveItem(item);
+                    StartCoroutine(ShowPopup(item));
                     ApplyStats(item);
                     karma++;
                     Destroy(button);

@@ -8,6 +8,7 @@ public class Item : MonoBehaviour
     public string description = "Eine Ziege";
     public string property;
     public float value;
+    public Sprite popUp;
 
     // This is for the tooltip
     private GUIStyle guiStyleFore;

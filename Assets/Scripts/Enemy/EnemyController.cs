@@ -7,11 +7,8 @@ public class EnemyController : MonoBehaviour
 {
     public float health = 10f;
     private Rigidbody2D rb;
-
     public float cropCoolDown = 0.5f;
-
     private float _canAttackCrops = -1f;
-
 
     // Update is called once per frame
     void Update()
@@ -32,8 +29,9 @@ public class EnemyController : MonoBehaviour
             Debug.Log(damage);
         }
     }
-    private void OnCollisionStay2D(Collision2D other) {
-        if(other.gameObject.tag == "Crops" && Time.time > _canAttackCrops)
+    private void OnCollisionStay2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Crops" && Time.time > _canAttackCrops)
         {
             _canAttackCrops = Time.time + cropCoolDown;
             other.gameObject.GetComponent<CropController>().health -= 5f;

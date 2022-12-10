@@ -6,8 +6,8 @@ using System;
 [Serializable]
 public class Health : MonoBehaviour
 {
-    private int currentHealth = 10;
-    public int maxHealth = 10;
+    public int currentHealth = 10;
+    public int MaxHealth = 10;
 
     public bool IsDead { get => currentHealth <= 0; }
 
@@ -15,7 +15,7 @@ public class Health : MonoBehaviour
 
     public void Start()
     {
-        currentHealth = maxHealth;
+        currentHealth = MaxHealth;
     }
 
     public void TakeDamage(int damage)

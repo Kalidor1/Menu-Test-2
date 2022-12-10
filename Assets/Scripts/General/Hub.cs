@@ -1,8 +1,8 @@
 ﻿﻿using System;
 using System.Collections;
 using System.Collections.Generic;
- using Extensions;
- using UnityEngine;
+using Extensions;
+using UnityEngine;
 
 /// <summary>
 /// This class can be used to hold objects that should be commonly available.
@@ -11,14 +11,15 @@ using System.Collections.Generic;
 public class Hub : PersistentSingleton<Hub>
 {
     [ReadOnly] public Dictionary<Type, object> registrations = new Dictionary<Type, object>();
+    public int daysSurvived = 0;
 
     void Awake()
     {
         if (!InitSingletonInstance())
             return;
-        
+
         // Register Stuff here via 
-            Register<AudioController>(AudioController.Instance);
+        Register<AudioController>(AudioController.Instance);
         // Or in the Awake() functions in the respective services
     }
 

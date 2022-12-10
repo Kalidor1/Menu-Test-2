@@ -68,6 +68,8 @@ public class GameController : Singleton<GameController>
     public GameObject Player;
     public GameObject Spawn;
     public GameObject altarPopup;
+    public int daysSurvived = 0;
+    public ParticleSystem altarParticles;
 
     private void Awake()
     {
@@ -123,6 +125,8 @@ public class GameController : Singleton<GameController>
                 dayNightText.text = GetTimeText(i) + " (Night)";
                 yield return new WaitForSeconds(nightLength);
             }
+
+            Hub.Instance.daysSurvived++;
         }
     }
 
@@ -305,6 +309,8 @@ public class GameController : Singleton<GameController>
 
     private IEnumerator ShowPopup(InventoryItem item)
     {
+        altarParticles.Play();
+
         //Create copy of popup
         var popup = Instantiate(altarPopup, altarPopup.transform.parent);
         popup.SetActive(true);

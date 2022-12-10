@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5000381255430973067
 MonoBehaviour:
@@ -69,7 +69,26 @@ MonoBehaviour:
   fullHeart: {fileID: 21300000, guid: 9d1ac7f5320bf884188300d79a72909d, type: 3}
   emptyHeart: {fileID: 21300000, guid: 9b672f4514ec91b4a8f1d47cca7ee02b, type: 3}
   inventory: {fileID: 0}
+  atAltar: 0
+  altarButtonContainer: {fileID: 0}
+  altarButton: {fileID: 3616631829527612851, guid: d9e30c82b50e33d45bfacbeab9d783ce, type: 3}
   inventoryText: {fileID: 0}
+  spawnerActive: 0
+  dayLength: 1
+  nightLength: 1
+  dayNightText: {fileID: 0}
+  canEnter: 0
+  isInHouse: 0
+  playerSpeed: 7
+  playerInvincibilityTime: 1
+  attackSpeed: 0.5
+  attackRange: 1
+  karmaEasterEgg: 1
+  Player: {fileID: 0}
+  Spawn: {fileID: 0}
+  altarPopup: {fileID: 0}
+  daysSurvived: 0
+  altarParticles: {fileID: 0}
 --- !u!114 &5000381255430973062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,4 +115,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5470af34193b5c5459a77cb7a05f7527, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  items: []

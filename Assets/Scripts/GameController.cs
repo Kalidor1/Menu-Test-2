@@ -32,14 +32,14 @@ public class GameController : Singleton<GameController>
     private GameState _prePauseState = GameState.Starting;
 
     [Header("Health UI")]
-
     public Health playerHealth;
     public Image[] healthImages;
     public Sprite fullHeart;
     public Sprite emptyHeart;
 
     [Header("Inventory")]
-    private Inventory inventory;
+    public Inventory inventory;
+    public TextMeshProUGUI inventoryText;
 
     private void Awake()
     {
@@ -88,7 +88,6 @@ public class GameController : Singleton<GameController>
             var health = playerHealth.CurrentHealth;
             var maxHealth = playerHealth.MaxHealth;
 
-
             for (int i = 0; i < healthImages.Length; i++)
             {
                 if (i < health)
@@ -110,11 +109,25 @@ public class GameController : Singleton<GameController>
                 }
             }
         }
+
+        if (inventory != null)
+        {
+            // Render inventory
+            var items = inventory.items;
+            var text = "";
+            foreach (var item in items)
+            {
+                text += item.name + $" ({item.description})";
+            }
+
+            inventoryText.text = text;
+        }
     }
 
     //  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ PUBLIC  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     public void PauseGame() => SetPause(true);
     public void ContinueGame() => SetPause(false);
+    public void Test() => Debug.Log("Test");
 
     public void PlayerHealthReachedZero()
     {

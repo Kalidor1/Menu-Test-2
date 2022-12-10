@@ -4,12 +4,24 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    public string itemName = "Ziege";
 
+    public string name = "Ziege";
+    public string description = "Eine Ziege";
+    public string property;
+    public float value;
+
+    // This is for the tooltip
     private GUIStyle guiStyleFore;
     private GUIStyle guiStyleBack;
-
     private bool visible = false;
+
+    public Item(Item item)
+    {
+        name = item.name;
+        description = item.description;
+        property = item.property;
+        value = item.value;
+    }
 
     public void Start()
     {
@@ -39,8 +51,8 @@ public class Item : MonoBehaviour
         if (visible)
         {
             Vector2 pos = Camera.main.WorldToScreenPoint(transform.position);
-            GUI.Label(new Rect(pos.x - 50, Screen.height - pos.y - 50, 100, 100), itemName, guiStyleBack);
-            GUI.Label(new Rect(pos.x - 50, Screen.height - pos.y - 50, 100, 100), itemName, guiStyleFore);
+            GUI.Label(new Rect(pos.x - 50, Screen.height - pos.y - 50, 100, 100), name, guiStyleBack);
+            GUI.Label(new Rect(pos.x - 50, Screen.height - pos.y - 50, 100, 100), name, guiStyleFore);
         }
     }
 }

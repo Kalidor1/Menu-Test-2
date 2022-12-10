@@ -11,20 +11,16 @@ public class PlayerController : MonoBehaviour
     private float moveLimiter = 0.7f;
     public float runSpeed = 20.0f;
     Vector2 mousePos;
-
     public float invincibilityTime = 2.0f;
-
-    private Health playerHealth;
-    private Inventory playerInventory;
 
     private GameObject itemInReach;
 
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
-        playerHealth = GetComponent<Health>();
 
-        playerInventory = GetComponent<Inventory>();
+        // Access GameController singleton 
+        GameController.Instance.Test();
     }
 
     void Update()
@@ -33,16 +29,14 @@ public class PlayerController : MonoBehaviour
         vertical = Input.GetAxisRaw("Vertical"); // -1 is down
 
 
-        if (playerHealth.IsDead)
+        if (GameController.Instance.playerHealth.IsDead)
         {
             GameController.Instance.PlayerHealthReachedZero();
         }
 
         if (Input.GetKeyDown(KeyCode.E) && itemInReach != null)
         {
-            Debug.Log("Inventory: " + playerInventory.items.Count);
-
-            playerInventory.AddItem(itemInReach.GetComponent<Item>().itemName);
+            GameController.Instance.inventory.AddItem(new Item(itemInReach.GetComponent<Item>()));
             Destroy(itemInReach);
         }
     }
@@ -52,7 +46,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy") && gameObject.layer != 10)
         {
             StartCoroutine(Invincibility());
-            playerHealth.TakeDamage(1);
+            GameController.Instance.playerHealth.TakeDamage(1);
         }
     }
 
@@ -69,7 +63,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy") && gameObject.layer != 10)
         {
             StartCoroutine(Invincibility());
-            playerHealth.TakeDamage(1);
+            GameController.Instance.playerHealth.TakeDamage(1);
         }
     }
 

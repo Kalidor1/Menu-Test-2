@@ -34,13 +34,18 @@ public class MarcoPlayerController : MonoBehaviour
 
         if (useGamepadRotation)
         {
+            //Rotate with right stick
             var direction = new Vector2(Input.GetAxis("RightStickHorizontal"), Input.GetAxis("RightStickVertical"));
-            if (direction.magnitude > 0.5f)
+            if (direction.sqrMagnitude > 0.0f)
             {
-                Vector3 curRotation = Vector3.left * direction.x + Vector3.up * direction.y;
-                Quaternion playerRotation = Quaternion.LookRotation(curRotation, Vector3.forward);
-                body.SetRotation(playerRotation);
+                var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+                //invert the angle
+
+                angle = 90 - angle;
+                transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
             }
+
         }
         else
         {

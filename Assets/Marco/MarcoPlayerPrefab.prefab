@@ -124,7 +124,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6926eb96dbbf064ebbe4698a3cb5974, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coolDown: 0.5
   isExtracting: 0
 --- !u!1 &688554090627220867
 GameObject:
@@ -160,7 +159,7 @@ Transform:
   m_Children:
   - {fileID: 906611260}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &688554090627220866
 SpriteRenderer:
@@ -226,10 +225,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80932c4d44667cf468d4ba899e703884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 8
   rotationSpeed: 20
   useGamepadRotation: 0
-  invincibilityTime: 2
 --- !u!50 &688554090627220872
 Rigidbody2D:
   serializedVersion: 4

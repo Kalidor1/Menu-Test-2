@@ -9,6 +9,7 @@ public class EnemyController : MonoBehaviour
     private Rigidbody2D rb;
     public float cropCoolDown = 0.5f;
     private float _canAttackCrops = -1f;
+    public ParticleSystem deathParticles;
 
     // Update is called once per frame
     void Update()
@@ -36,5 +37,12 @@ public class EnemyController : MonoBehaviour
             _canAttackCrops = Time.time + cropCoolDown;
             other.gameObject.GetComponent<CropController>().health -= 5f;
         }
+    }
+
+    // play death particles and destroy the enemy
+    private void OnDestroy()
+    {
+        var particles = Instantiate(deathParticles, transform.position, Quaternion.identity);
+        particles.Play();
     }
 }

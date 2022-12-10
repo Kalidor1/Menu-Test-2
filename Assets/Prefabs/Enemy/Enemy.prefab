@@ -134,7 +134,7 @@ Transform:
   m_Children:
   - {fileID: 8578253417267572015}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8578253418383084712
 MonoBehaviour:
@@ -280,3 +280,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
+  cropCoolDown: 0.5
+  deathParticles: {fileID: 6492137837180955096, guid: c4190e5c25840124db97d6fe814f019f, type: 3}

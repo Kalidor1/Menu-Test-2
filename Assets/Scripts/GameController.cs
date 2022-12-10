@@ -3,6 +3,7 @@ using System.Collections;
 using Extensions;
 using TMPro;
 using UnityEditor;
+using System.Reflection;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -51,6 +52,10 @@ public class GameController : Singleton<GameController>
     public float dayLength = 1f;
     public float nightLength = 1f;
     public TextMeshProUGUI dayNightText;
+    public bool canEnter = false;
+
+    [Header("Public Stats")]
+    public float playerSpeed = 5f;
 
     private void Awake()
     {
@@ -83,12 +88,14 @@ public class GameController : Singleton<GameController>
         while (true)
         {
             spawnerActive = SpawnerType.Item;
+            canEnter = true;
             for (int i = 0; i < dayLength; i++)
             {
                 dayNightText.text = "Day " + (i + 1);
                 yield return new WaitForSeconds(1);
             }
 
+            canEnter = false;
             spawnerActive = SpawnerType.Enemy;
             for (int i = 0; i < nightLength; i++)
             {
@@ -247,6 +254,16 @@ public class GameController : Singleton<GameController>
         }
     }
 
+    private void ApplyStats(InventoryItem item)
+    {
+        switch (item.Property)
+        {
+            case "playerSpeed":
+                playerSpeed += item.Value;
+                break;
+        }
+    }
+
     public void UpdateUI()
     {
         if (atAltar)
@@ -268,6 +285,7 @@ public class GameController : Singleton<GameController>
                 button.GetComponentInChildren<Button>().onClick.AddListener(() =>
                 {
                     inventory.RemoveItem(item);
+                    ApplyStats(item);
                     Destroy(button);
                     UpdateUI();
                 });
@@ -321,7 +339,7 @@ public class GameController : Singleton<GameController>
 
             if (GUILayout.Button("Next Level"))
             {
-                gct.ChangeLevel();
+                SceneController.Instance.LoadScene("PrototypeScene");
             }
         }
     }

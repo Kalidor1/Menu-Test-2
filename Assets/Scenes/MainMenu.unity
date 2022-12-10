@@ -815,6 +815,76 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &2012755671 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1212594851240079669, guid: f8ff5267bb24f564497ebdad6900051c, type: 3}
+  m_PrefabInstance: {fileID: 2123113928}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2012755674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012755671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5470af34193b5c5459a77cb7a05f7527, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2012755675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012755671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b93b5459612dd3a49a809f7216f6746d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 10
+  MaxHealth: 10
+--- !u!114 &2012755676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012755671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26e19f12c79fee7458c03e2bed745bb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: 0
+  level: 0
+  maxLevel: 5
+  gameState: 0
+  isPaused: 0
+  gameUi: {fileID: 0}
+  pauseUi: {fileID: 0}
+  levelText: {fileID: 0}
+  diedText: {fileID: 0}
+  finishedText: {fileID: 0}
+  restartButton: {fileID: 0}
+  fadeImage: {fileID: 0}
+  levels: []
+  playerHealth: {fileID: 0}
+  healthImages: []
+  fullHeart: {fileID: 0}
+  emptyHeart: {fileID: 0}
+  inventory: {fileID: 0}
+  atAltar: 0
+  altarButtonContainer: {fileID: 0}
+  altarButton: {fileID: 0}
+  inventoryText: {fileID: 0}
+  spawnerActive: 0
+  dayLength: 1
+  nightLength: 1
+  dayNightText: {fileID: 0}
+  playerSpeed: 5
 --- !u!1 &2076638968
 GameObject:
   m_ObjectHideFlags: 0

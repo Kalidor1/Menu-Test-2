@@ -32,8 +32,7 @@ public class EnemyController : MonoBehaviour
             Debug.Log(damage);
         }
     }
-
-    void OnTriggerStay2D(Collision2D other) {
+    private void OnCollisionStay2D(Collision2D other) {
         if(other.gameObject.tag == "Crops" && Time.time > _canAttackCrops)
         {
             _canAttackCrops = Time.time + cropCoolDown;

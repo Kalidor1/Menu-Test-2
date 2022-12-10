@@ -196,11 +196,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 484425633465300266, guid: afc2c08c8c782ed4cbb7ada467b27baa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.337738
+      value: -4.56
       objectReference: {fileID: 0}
     - target: {fileID: 484425633465300266, guid: afc2c08c8c782ed4cbb7ada467b27baa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.254138
+      value: 1.36
       objectReference: {fileID: 0}
     - target: {fileID: 484425633465300266, guid: afc2c08c8c782ed4cbb7ada467b27baa, type: 3}
       propertyPath: m_LocalPosition.z
@@ -245,7 +245,7 @@ PrefabInstance:
     - target: {fileID: 2987088416753037266, guid: afc2c08c8c782ed4cbb7ada467b27baa, type: 3}
       propertyPath: objectsToSpawn.Array.data[0].gameObject
       value: 
-      objectReference: {fileID: 1292777763811906112, guid: e451a244a3033934a8bc8deda0dad878, type: 3}
+      objectReference: {fileID: 8578253418383084714, guid: f20e70825fe932c4fab50cfb26cfa304, type: 3}
     - target: {fileID: 6394940262715344094, guid: afc2c08c8c782ed4cbb7ada467b27baa, type: 3}
       propertyPath: m_Name
       value: Spawner
@@ -307,6 +307,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6053227856595704264, guid: ee91e564ccfd93741b7d18332a93728a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6053227856595704265, guid: ee91e564ccfd93741b7d18332a93728a, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

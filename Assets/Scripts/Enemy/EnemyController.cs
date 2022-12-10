@@ -17,9 +17,10 @@ public class EnemyController : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("Trigger");
+
         if (other.gameObject.tag == "Weapon")
         {
             var damage = other.gameObject.GetComponent<PitchforkController>().isExtracting ? 10f : 2f;

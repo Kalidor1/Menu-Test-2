@@ -87,6 +87,13 @@ public class GameController : Singleton<GameController>
     {
         while (true)
         {
+            // Remove all enemies during day
+            var enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            foreach (var enemy in enemies)
+            {
+                Destroy(enemy);
+            }
+
             spawnerActive = SpawnerType.Item;
             canEnter = true;
             for (int i = 0; i < dayLength; i++)

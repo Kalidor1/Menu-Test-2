@@ -179,6 +179,18 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 906611260, guid: 7a19b74a940ed444c8e6376b05b14e27, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 906611261, guid: 7a19b74a940ed444c8e6376b05b14e27, type: 3}
+      propertyPath: m_SortingOrder
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 906611264, guid: 7a19b74a940ed444c8e6376b05b14e27, type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 688554090627220866, guid: 7a19b74a940ed444c8e6376b05b14e27, type: 3}
       propertyPath: m_SortingOrder
       value: 200
@@ -233,6 +245,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 688554090627220869, guid: 7a19b74a940ed444c8e6376b05b14e27, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 688554090627220872, guid: 7a19b74a940ed444c8e6376b05b14e27, type: 3}
+      propertyPath: m_BodyType
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 688554090627220872, guid: 7a19b74a940ed444c8e6376b05b14e27, type: 3}
@@ -14982,7 +14998,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

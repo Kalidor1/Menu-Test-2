@@ -8,7 +8,7 @@ public class PitchforkController : MonoBehaviour
     public float coolDown = 0.5f;
     private float _canAttack = -1f;
     
-    private bool _isExtracting = false;
+    public bool isExtracting = false;
 
     private float currentExtraction = 0f;
     private float maxExtraction = 0.5f;
@@ -26,20 +26,20 @@ public class PitchforkController : MonoBehaviour
         if(Input.GetMouseButtonDown(0) && Time.time > _canAttack)
         {
             _canAttack = Time.time + coolDown;
-            _isExtracting = true;
+            isExtracting = true;
             transform.localPosition += new Vector3(0f, 0.5f, 0f);
         }
     }
 
     void FixedUpdate() {
-        if(_isExtracting && currentExtraction < maxExtraction)
+        if(isExtracting && currentExtraction < maxExtraction)
         {
             currentExtraction += _slashSpeed;
             transform.localPosition += new Vector3(0f, _slashSpeed, 0f);
         }
-        else if(_isExtracting)
+        else if(isExtracting)
         {
-            _isExtracting = false;
+            isExtracting = false;
             currentExtraction = 0f;
             transform.localPosition = initialPosition;
         }

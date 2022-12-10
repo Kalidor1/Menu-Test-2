@@ -17,15 +17,15 @@ public class DoorController : MonoBehaviour
     void Start()
     {
         guiStyleFore = new GUIStyle();
-        guiStyleFore.normal.textColor = Color.black;
+        guiStyleFore.normal.textColor = Color.white;
         guiStyleFore.alignment = TextAnchor.UpperCenter;
         guiStyleFore.fontSize = 20;
 
         guiStyleBack = new GUIStyle();
-        guiStyleBack.normal.textColor = Color.white;
-        guiStyleBack.normal.background = Texture2D.whiteTexture;
+        guiStyleBack.normal.textColor = Color.black;
         guiStyleBack.alignment = TextAnchor.UpperCenter;
-        guiStyleBack.fontSize = 20;
+        guiStyleBack.fontSize = 21;
+
     }
 
     void Update()
@@ -56,7 +56,7 @@ public class DoorController : MonoBehaviour
 
     private void OnGUI()
     {
-        if (visible)
+        if (visible && GameController.Instance.canEnter)
         {
             Vector2 pos = Camera.main.WorldToScreenPoint(transform.position);
             GUI.Label(new Rect(pos.x - 50, Screen.height - pos.y - 50, 100, 100), description, guiStyleBack);

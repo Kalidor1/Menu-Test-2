@@ -9,6 +9,8 @@ public class EnemyController : MonoBehaviour
     public string playerTag = null;
     public float speed = 1f;
 
+    public float health = 10f;
+
     private Rigidbody2D rb;
 
 
@@ -26,6 +28,9 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(health <= 0){
+            Destroy(gameObject);
+        }
         //add force towards the target
         if (target != null)
         {
@@ -36,6 +41,16 @@ public class EnemyController : MonoBehaviour
             {
                 rb.velocity = rb.velocity.normalized * speed;
             }
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject.tag == "Weapon")
+        {
+            var damage = other.gameObject.GetComponent<PitchforkController>().isExtracting ? 10f : 2f;
+            health -= damage;
+            Debug.Log(damage);
         }
     }
 }

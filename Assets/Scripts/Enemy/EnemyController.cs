@@ -38,4 +38,12 @@ public class EnemyController : MonoBehaviour
             }
         }
     }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject.tag == "Weapon")
+        {
+            Destroy(gameObject);
+        }
+    }
 }

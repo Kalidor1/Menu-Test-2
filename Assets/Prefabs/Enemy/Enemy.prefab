@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9528eacb8f42d9e44bdd1094f0db7bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 688554090627220867, guid: 6934d14731c59bd44b6c3a6962eef2ba, type: 3}
+  target: {fileID: 688554090627220867, guid: 7a19b74a940ed444c8e6376b05b14e27, type: 3}
   playerTag: Player
   speed: 5
 --- !u!61 &855761134141519148
@@ -96,7 +96,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &1745411302837967259
 GameObject:
   m_ObjectHideFlags: 0

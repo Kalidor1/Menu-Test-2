@@ -11,6 +11,12 @@ public class SpawnerObject
     public int amount;
 }
 
+public enum SpawnerType
+{
+    Enemy,
+    Item
+}
+
 public class Spawner : MonoBehaviour
 {
     //The object to spawn plus the amount
@@ -18,6 +24,7 @@ public class Spawner : MonoBehaviour
 
     //The rate at which to spawn in seconds
     public float spawnRate = 1f;
+    public SpawnerType type;
 
     void Start()
     {
@@ -26,6 +33,12 @@ public class Spawner : MonoBehaviour
 
     void Spawn()
     {
+        if (GameController.Instance.spawnerActive != type)
+        {
+            Invoke("Spawn", spawnRate);
+            return;
+        }
+
         //take a random object from the dictionary
         var randomIndex = UnityEngine.Random.Range(0, objectsToSpawn.Length);
         var randomEntry = objectsToSpawn[randomIndex];

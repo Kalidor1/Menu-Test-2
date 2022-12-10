@@ -179,6 +179,38 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 906611259, guid: 7a19b74a940ed444c8e6376b05b14e27, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 906611261, guid: 7a19b74a940ed444c8e6376b05b14e27, type: 3}
+      propertyPath: m_SortingOrder
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 906611262, guid: 7a19b74a940ed444c8e6376b05b14e27, type: 3}
+      propertyPath: m_Size.x
+      value: 1.2372053
+      objectReference: {fileID: 0}
+    - target: {fileID: 906611262, guid: 7a19b74a940ed444c8e6376b05b14e27, type: 3}
+      propertyPath: m_Size.y
+      value: 1.5730222
+      objectReference: {fileID: 0}
+    - target: {fileID: 906611262, guid: 7a19b74a940ed444c8e6376b05b14e27, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 906611262, guid: 7a19b74a940ed444c8e6376b05b14e27, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.01008597
+      objectReference: {fileID: 0}
+    - target: {fileID: 906611262, guid: 7a19b74a940ed444c8e6376b05b14e27, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.81107
+      objectReference: {fileID: 0}
+    - target: {fileID: 906611264, guid: 7a19b74a940ed444c8e6376b05b14e27, type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 688554090627220866, guid: 7a19b74a940ed444c8e6376b05b14e27, type: 3}
       propertyPath: m_SortingOrder
       value: 200

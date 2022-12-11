@@ -162,15 +162,7 @@ public class GameController : Singleton<GameController>
 
         RenderPlayerState();
 
-        var vmcam = GameObject.Find("CM vcam1");
-        if (vmcam != null)
-        {
-            var vcam = vmcam.GetComponent<CinemachineVirtualCamera>();
-            if (vcam != null)
-            {
-                vcam.m_Lens.OrthographicSize = isInHouse ? 4 : 8;
-            }
-        }
+
 
         canSacrifice = sacrificed < maxSacrificed;
     }

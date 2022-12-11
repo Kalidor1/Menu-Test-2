@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class DoorController : MonoBehaviour
 {
@@ -41,6 +42,16 @@ public class DoorController : MonoBehaviour
             else
             {
                 AudioController.Instance.PlayMusic("DefaultMusic");
+            }
+        }
+
+        var vmcam = GameObject.Find("CM vcam1");
+        if (vmcam != null)
+        {
+            var vcam = vmcam.GetComponent<CinemachineVirtualCamera>();
+            if (vcam != null)
+            {
+                vcam.m_Lens.OrthographicSize = GameController.Instance.isInHouse ? 5 : 8;
             }
         }
     }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c43a5e1f55742734dacd1ad9f38181a9, type: 3}
   m_Name: Pickup
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 7d8d8bfbd8f2f2c44a72d3d8eb346b34, type: 3}
   audioClips: []
   subtitle: 
   loop: 0

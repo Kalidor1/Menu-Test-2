@@ -40,7 +40,7 @@ public class DoorController : MonoBehaviour
             }
             else
             {
-                AudioController.Instance.PlayMusic("Default");
+                AudioController.Instance.PlayMusic("DefaultMusic");
             }
         }
     }

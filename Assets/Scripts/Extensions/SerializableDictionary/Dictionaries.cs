@@ -15,9 +15,6 @@ namespace Extensions.SerializableDictionary
     {
     }
 
-    [Serializable]
-   
- 
 
 
     // [Serializable]

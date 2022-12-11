@@ -19,6 +19,6 @@ MonoBehaviour:
   volume: 1
   pitch: 1
   volumeVariation: 0
-  pitchVariation: 0
+  pitchVariation: 0.332
   useMaxRange: 0
   maxRange: 10

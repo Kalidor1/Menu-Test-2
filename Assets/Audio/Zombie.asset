@@ -13,12 +13,15 @@ MonoBehaviour:
   m_Name: Zombie
   m_EditorClassIdentifier: 
   audioClip: {fileID: 0}
-  audioClips: []
+  audioClips:
+  - {fileID: 8300000, guid: ceeeb57bd0ca8604da5e9f9a01c852a6, type: 3}
+  - {fileID: 8300000, guid: 6ee4fcc0f96155a47877b93f6e69785a, type: 3}
+  - {fileID: 8300000, guid: dba852a18457fc34fbeee7f867c1cb4d, type: 3}
   subtitle: 
   loop: 0
-  volume: 1
+  volume: 0.47
   pitch: 1
   volumeVariation: 0
-  pitchVariation: 0
+  pitchVariation: 1
   useMaxRange: 0
   maxRange: 10

@@ -470,6 +470,38 @@ PrefabInstance:
       propertyPath: defaultMusic
       value: DefaultMusic
       objectReference: {fileID: 0}
+    - target: {fileID: 5728245550169283007, guid: 58812cbae39f90f408721f65a4bff710, type: 3}
+      propertyPath: musicClips.m_keys.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5728245550169283007, guid: 58812cbae39f90f408721f65a4bff710, type: 3}
+      propertyPath: soundClips.m_keys.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5728245550169283007, guid: 58812cbae39f90f408721f65a4bff710, type: 3}
+      propertyPath: musicClips.m_values.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5728245550169283007, guid: 58812cbae39f90f408721f65a4bff710, type: 3}
+      propertyPath: soundClips.m_values.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5728245550169283007, guid: 58812cbae39f90f408721f65a4bff710, type: 3}
+      propertyPath: musicClips.m_keys.Array.data[2]
+      value: NightMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 5728245550169283007, guid: 58812cbae39f90f408721f65a4bff710, type: 3}
+      propertyPath: soundClips.m_keys.Array.data[3]
+      value: Zombie
+      objectReference: {fileID: 0}
+    - target: {fileID: 5728245550169283007, guid: 58812cbae39f90f408721f65a4bff710, type: 3}
+      propertyPath: musicClips.m_values.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 00fb5813328834245b8fd048127441d2, type: 2}
+    - target: {fileID: 5728245550169283007, guid: 58812cbae39f90f408721f65a4bff710, type: 3}
+      propertyPath: soundClips.m_values.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 51812fdc0291c1947953a982a86cd272, type: 2}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 58812cbae39f90f408721f65a4bff710, type: 3}

@@ -15,10 +15,7 @@ namespace Extensions.SerializableDictionary
     {
     }
 
-    [Serializable]
-   
- 
-
+  
 
     // [Serializable]
     // public class StringStringDictionary: SerializeableDictionary<string, string> {} // Add here

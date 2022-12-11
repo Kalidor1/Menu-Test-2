@@ -80,7 +80,7 @@ public class Altar : MonoBehaviour
         {
             var button = Instantiate(altarButton, altarButtonContainer.transform);
             //move button down a bit
-            var offset = 40 * GameController.Instance.inventory.items.IndexOf(item);
+            var offset = 50 * GameController.Instance.inventory.items.IndexOf(item);
             button.transform.position += new Vector3(0, -offset, 0);
             button.GetComponentInChildren<TextMeshProUGUI>().text = item.Name;
             button.GetComponentInChildren<Button>().onClick.AddListener(() =>
@@ -98,7 +98,7 @@ public class Altar : MonoBehaviour
         {
             var button = Instantiate(altarButton, altarButtonContainer.transform);
             //move button down a bit
-            var offset = 30 * GameController.Instance.inventory.items.Count;
+            var offset = 50 * GameController.Instance.inventory.items.Count;
             button.transform.position += new Vector3(0, -offset, 0);
             button.GetComponentInChildren<TextMeshProUGUI>().text = "Yourself";
             button.GetComponentInChildren<Button>().onClick.AddListener(() =>

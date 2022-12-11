@@ -119,7 +119,10 @@ public class GameController : Singleton<GameController>
             }
 
             //move player to spawn
-            if (isInHouse) Player.transform.position = Spawn.transform.position;
+            if (Spawn != null)
+            {
+                if (isInHouse) Player.transform.position = Spawn.transform.position;
+            }
             canEnter = false;
             spawnerActive = SpawnerType.Enemy;
             AudioController.Instance.PlayMusic("NightMusic");

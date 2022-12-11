@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2119346028097152112, guid: 167d888a3e5edf74c8a82ed8a05de5b9, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2119346028097152112, guid: 167d888a3e5edf74c8a82ed8a05de5b9, type: 3}
       propertyPath: m_LocalScale.x
@@ -22,11 +22,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2119346028097152112, guid: 167d888a3e5edf74c8a82ed8a05de5b9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 21.787186
       objectReference: {fileID: 0}
     - target: {fileID: 2119346028097152112, guid: 167d888a3e5edf74c8a82ed8a05de5b9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 12.106966
       objectReference: {fileID: 0}
     - target: {fileID: 2119346028097152112, guid: 167d888a3e5edf74c8a82ed8a05de5b9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -63,6 +63,14 @@ PrefabInstance:
     - target: {fileID: 2119346028097152116, guid: 167d888a3e5edf74c8a82ed8a05de5b9, type: 3}
       propertyPath: m_Name
       value: Duck Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2119346028097152117, guid: 167d888a3e5edf74c8a82ed8a05de5b9, type: 3}
+      propertyPath: m_Radius
+      value: 7.04786
+      objectReference: {fileID: 0}
+    - target: {fileID: 2119346028097152117, guid: 167d888a3e5edf74c8a82ed8a05de5b9, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.10340841
       objectReference: {fileID: 0}
     - target: {fileID: 2119346028097152118, guid: 167d888a3e5edf74c8a82ed8a05de5b9, type: 3}
       propertyPath: name

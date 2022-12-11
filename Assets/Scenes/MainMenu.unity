@@ -630,19 +630,7 @@ PrefabInstance:
       objectReference: {fileID: 976225777}
     - target: {fileID: 5000381255430973067, guid: 5dd337289a549034c8b0234615f85d56, type: 3}
       propertyPath: dayLength
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5000381255430973067, guid: 5dd337289a549034c8b0234615f85d56, type: 3}
-      propertyPath: gameState
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5000381255430973067, guid: 5dd337289a549034c8b0234615f85d56, type: 3}
-      propertyPath: altarPopup
-      value: 
-      objectReference: {fileID: 2476704831294632285, guid: eff9bc208dfeae84f81777cafc623dc1, type: 3}
-    - target: {fileID: 5000381255430973067, guid: 5dd337289a549034c8b0234615f85d56, type: 3}
-      propertyPath: nightLength
-      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5000381255430973067, guid: 5dd337289a549034c8b0234615f85d56, type: 3}
       propertyPath: dayNightText
@@ -652,10 +640,6 @@ PrefabInstance:
       propertyPath: inventoryText
       value: 
       objectReference: {fileID: 1515107732}
-    - target: {fileID: 5000381255430973067, guid: 5dd337289a549034c8b0234615f85d56, type: 3}
-      propertyPath: altarParticles
-      value: 
-      objectReference: {fileID: 3277156681596231418, guid: 49293d4badea3ca448da5b000e25c79f, type: 3}
     - target: {fileID: 5000381255430973067, guid: 5dd337289a549034c8b0234615f85d56, type: 3}
       propertyPath: altarButtonContainer
       value: 

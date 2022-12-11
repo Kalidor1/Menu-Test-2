@@ -43,8 +43,8 @@ public class GameController : Singleton<GameController>
     [Header("Inventory")]
     public Inventory inventory;
     public bool atAltar;
-    public GameObject altarButtonContainer;
-    public GameObject altarButton;
+    // public GameObject altarButtonContainer;
+    // public GameObject altarButton;
     public TextMeshProUGUI inventoryText;
 
     [Header("Spawner")]
@@ -66,13 +66,13 @@ public class GameController : Singleton<GameController>
     public bool isBanana = false;
 
     [Header("What ever")]
-    private int karma = 0;
+    public int karma = 0;
     // Easter egg where you can sac yourself
     public int karmaEasterEgg = 1;
     public GameObject Player;
     public GameObject Spawn;
-    public GameObject altarPopup;
-    public ParticleSystem altarParticles;
+    // public GameObject altarPopup;
+    // public ParticleSystem altarParticles;
 
     private void Awake()
     {
@@ -313,7 +313,7 @@ public class GameController : Singleton<GameController>
         }
     }
 
-    private void ApplyStats(InventoryItem item)
+    public void ApplyStats(InventoryItem item)
     {
         switch (item.Property)
         {
@@ -335,69 +335,8 @@ public class GameController : Singleton<GameController>
         }
     }
 
-    private IEnumerator ShowPopup(InventoryItem item)
-    {
-        //change texture sheet to item texture sheet
-        altarParticles.textureSheetAnimation.SetSprite(0, item.Icon);
-        altarParticles.Play();
-
-        //Create copy of popup
-        var popup = Instantiate(altarPopup, altarPopup.transform.parent);
-        popup.SetActive(true);
-
-        //Set sprite of sprite renderer
-        popup.GetComponentInChildren<SpriteRenderer>().sprite = item.PopUp;
-
-        //Add upwards force
-        popup.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 200));
-
-        yield return new WaitForSeconds(2);
-
-        Destroy(popup);
-    }
-
     public void UpdateUI()
     {
-        // Remove old buttons
-        foreach (Transform child in altarButtonContainer.transform)
-        {
-            Destroy(child.gameObject);
-        }
-
-        if (atAltar)
-        {
-            // Render inventory as buttons
-            foreach (var item in inventory.items)
-            {
-                var button = Instantiate(altarButton, altarButtonContainer.transform);
-                //move button down a bit
-                var offset = 30 * inventory.items.IndexOf(item);
-                button.transform.position += new Vector3(0, -offset, 0);
-                button.GetComponentInChildren<TextMeshProUGUI>().text = item.Name;
-                button.GetComponentInChildren<Button>().onClick.AddListener(() =>
-                {
-                    inventory.RemoveItem(item);
-                    StartCoroutine(ShowPopup(item));
-                    ApplyStats(item);
-                    karma++;
-                    UpdateUI();
-                });
-            }
-
-            if (karma >= karmaEasterEgg)
-            {
-                var button = Instantiate(altarButton, altarButtonContainer.transform);
-                //move button down a bit
-                var offset = 30 * inventory.items.Count;
-                button.transform.position += new Vector3(0, -offset, 0);
-                button.GetComponentInChildren<TextMeshProUGUI>().text = "Yourself";
-                button.GetComponentInChildren<Button>().onClick.AddListener(() =>
-                {
-                    //DIE 
-                    SceneController.Instance.LoadScene("GameWin");
-                });
-            }
-        }
 
         switch (GameState)
         {

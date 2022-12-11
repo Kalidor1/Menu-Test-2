@@ -19,6 +19,9 @@ public class typewriterUI : MonoBehaviour
     [SerializeField] string leadingChar = "";
     [SerializeField] bool leadingCharBeforeDelay = false;
 
+    public int TimeToWait = 5;
+    public string SceneToLoad = "";
+
     // Use this for initialization
     void Start()
     {
@@ -63,6 +66,10 @@ public class typewriterUI : MonoBehaviour
         {
             _text.text = _text.text.Substring(0, _text.text.Length - leadingChar.Length);
         }
+
+        yield return new WaitForSeconds(TimeToWait);
+
+        SceneController.Instance.LoadScene(SceneToLoad);
     }
 
     IEnumerator TypeWriterTMP()

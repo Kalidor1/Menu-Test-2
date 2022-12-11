@@ -261,6 +261,34 @@ PrefabInstance:
       propertyPath: m_text
       value: Restart
       objectReference: {fileID: 0}
+    - target: {fileID: 6329144305853852318, guid: 6639b070b9c960d41b4420b6a360e924, type: 3}
+      propertyPath: m_fontSize
+      value: 27.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 6329144305853852318, guid: 6639b070b9c960d41b4420b6a360e924, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6329144305853852318, guid: 6639b070b9c960d41b4420b6a360e924, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6329144305853852318, guid: 6639b070b9c960d41b4420b6a360e924, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6329144305853852318, guid: 6639b070b9c960d41b4420b6a360e924, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 27.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 6329144305853852318, guid: 6639b070b9c960d41b4420b6a360e924, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
+    - target: {fileID: 6329144305853852319, guid: 6639b070b9c960d41b4420b6a360e924, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 6329144306197150544, guid: 6639b070b9c960d41b4420b6a360e924, type: 3}
       propertyPath: m_Name
       value: MainMenuCanvas

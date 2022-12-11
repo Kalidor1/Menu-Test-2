@@ -72,6 +72,8 @@ public class GameController : Singleton<GameController>
     public int sacrificed = 0;
     public bool canSacrifice = true;
     public int maxSacrificed = 3;
+    public GameObject vmcam;
+
 
     private void Awake()
     {
@@ -121,7 +123,17 @@ public class GameController : Singleton<GameController>
             //move player to spawn
             if (Spawn != null)
             {
-                if (isInHouse) Player.transform.position = Spawn.transform.position;
+                if (isInHouse)
+                { Player.transform.position = Spawn.transform.position;
+                    isInHouse = false;
+                    if (vmcam != null)
+                    {
+
+                        vmcam.GetComponent<CinemachineVirtualCamera>().m_Lens.OrthographicSize = 8;
+                        Debug.Log("Changed Cam");
+                    }
+
+                }
             }
             canEnter = false;
             spawnerActive = SpawnerType.Enemy;
@@ -172,6 +184,11 @@ public class GameController : Singleton<GameController>
 
 
         canSacrifice = sacrificed < maxSacrificed;
+
+        //tag finding:
+        Player = GameObject.FindGameObjectWithTag("Player");
+        vmcam = GameObject.Find("CM vcam1");
+      
     }
 
     private void RenderPlayerState()

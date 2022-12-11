@@ -51,7 +51,14 @@ public class DoorController : MonoBehaviour
             var vcam = vmcam.GetComponent<CinemachineVirtualCamera>();
             if (vcam != null)
             {
-                vcam.m_Lens.OrthographicSize = GameController.Instance.isInHouse ? 5 : 8;
+                if (GameController.Instance.isInHouse)
+                {
+                    vcam.m_Lens.OrthographicSize = 5;
+                }
+                else
+                {
+                    vcam.m_Lens.OrthographicSize = 8;
+                }
             }
         }
     }

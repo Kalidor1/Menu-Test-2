@@ -773,6 +773,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2012755676, guid: f8ff5267bb24f564497ebdad6900051c, type: 3}
+      propertyPath: Spawn
+      value: 
+      objectReference: {fileID: 6202697741884527374, guid: 68b47e760eed15542a7e5b6b9e55b0b9, type: 3}
+    - target: {fileID: 2012755676, guid: f8ff5267bb24f564497ebdad6900051c, type: 3}
       propertyPath: gameUi
       value: 
       objectReference: {fileID: 608857925}

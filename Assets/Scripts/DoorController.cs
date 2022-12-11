@@ -9,6 +9,7 @@ public class DoorController : MonoBehaviour
     public bool playerIsNear = false;
 
     public string description = "Press E to enter";
+    public bool isAltar;
 
     private GUIStyle guiStyleFore;
     private GUIStyle guiStyleBack;
@@ -19,13 +20,12 @@ public class DoorController : MonoBehaviour
         guiStyleFore = new GUIStyle();
         guiStyleFore.normal.textColor = Color.white;
         guiStyleFore.alignment = TextAnchor.UpperCenter;
-        guiStyleFore.fontSize = 20;
+        guiStyleFore.fontSize = 25;
 
         guiStyleBack = new GUIStyle();
-        guiStyleBack.normal.textColor = Color.black;
+        guiStyleBack.normal.textColor = Color.white;
         guiStyleBack.alignment = TextAnchor.UpperCenter;
-        guiStyleBack.fontSize = 21;
-
+        guiStyleBack.fontSize = 25;
     }
 
     void Update()
@@ -34,6 +34,14 @@ public class DoorController : MonoBehaviour
         {
             GameController.Instance.isInHouse = !GameController.Instance.isInHouse;
             GameObject.FindGameObjectWithTag("Player").transform.position = targetPosition.transform.position;
+            if (isAltar)
+            {
+                AudioController.Instance.PlayMusic("AltarMusic");
+            }
+            else
+            {
+                AudioController.Instance.PlayMusic("Default");
+            }
         }
     }
 

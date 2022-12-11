@@ -25,6 +25,7 @@ public class PitchforkController : MonoBehaviour
     {
         if ((Input.GetMouseButton(0) || Input.GetKeyDown(KeyCode.JoystickButton5)) && Time.time > _canAttack)
         {
+
             _canAttack = Time.time + GameController.Instance.attackSpeed;
             isExtracting = true;
             transform.localPosition += new Vector3(0f, 0.5f, 0f);

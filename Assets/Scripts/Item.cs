@@ -20,14 +20,14 @@ public class Item : MonoBehaviour
     public void Start()
     {
         guiStyleFore = new GUIStyle();
-        guiStyleFore.normal.textColor = Color.black;
+        guiStyleFore.normal.textColor = Color.white;
         guiStyleFore.alignment = TextAnchor.UpperCenter;
-        guiStyleFore.fontSize = 20;
+        guiStyleFore.fontSize = 25;
 
         guiStyleBack = new GUIStyle();
         guiStyleBack.normal.textColor = Color.white;
         guiStyleBack.alignment = TextAnchor.UpperCenter;
-        guiStyleBack.fontSize = 20;
+        guiStyleBack.fontSize = 25;
     }
 
     public void OnTriggerEnter2D(Collider2D collision)

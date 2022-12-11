@@ -11,7 +11,7 @@ using UnityEngine;
 public class Hub : PersistentSingleton<Hub>
 {
     [ReadOnly] public Dictionary<Type, object> registrations = new Dictionary<Type, object>();
-    public int daysSurvived = 0;
+    public int daysSurvived = 1;
 
     void Awake()
     {

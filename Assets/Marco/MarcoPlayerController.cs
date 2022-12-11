@@ -85,6 +85,7 @@ public class MarcoPlayerController : MonoBehaviour
             if (collision.gameObject.GetComponent<Item>().isPickup)
             {
                 GameController.Instance.playerHealth.Heal(1);
+                AudioController.Instance.PlaySound("Pickup");
                 Destroy(collision.gameObject);
             }
             else

@@ -26,6 +26,8 @@ public class EnemyController : MonoBehaviour
 
         if (other.gameObject.tag == "Weapon")
         {
+            AudioController.Instance.PlaySound("Hit");
+
             var damage = other.gameObject.GetComponent<PitchforkController>().isExtracting ? 10f : 2f;
             health -= damage;
             Debug.Log(damage);

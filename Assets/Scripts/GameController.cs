@@ -6,6 +6,7 @@ using UnityEditor;
 using System.Reflection;
 using UnityEngine;
 using UnityEngine.UI;
+using Cinemachine;
 
 public class GameController : Singleton<GameController>
 {
@@ -113,7 +114,7 @@ public class GameController : Singleton<GameController>
             canEnter = true;
             for (int i = 8; i <= 20; i++)
             {
-                dayNightText.text = GetTimeText(i) + " (Day)";
+                dayNightText.text = $"{GetTimeText(i)} (Day {Hub.Instance.daysSurvived})";
                 yield return new WaitForSeconds(dayLength);
             }
 
@@ -123,7 +124,7 @@ public class GameController : Singleton<GameController>
             spawnerActive = SpawnerType.Enemy;
             for (int i = 21; i <= 31; i++)
             {
-                dayNightText.text = GetTimeText(i) + " (Night)";
+                dayNightText.text = $"{GetTimeText(i)} (Night {Hub.Instance.daysSurvived})";
                 yield return new WaitForSeconds(nightLength);
             }
 
@@ -159,6 +160,17 @@ public class GameController : Singleton<GameController>
         }
 
         RenderPlayerState();
+
+
+        var vmcam = GameObject.Find("CM vcam1");
+        if (vmcam != null)
+        {
+            var vcam = vmcam.GetComponent<CinemachineVirtualCamera>();
+            if (vcam != null)
+            {
+                vcam.m_Lens.OrthographicSize = isInHouse ? 4 : 8;
+            }
+        }
     }
 
     private void RenderPlayerState()
@@ -326,7 +338,7 @@ public class GameController : Singleton<GameController>
         //change texture sheet to item texture sheet
         altarParticles.textureSheetAnimation.SetSprite(0, item.Icon);
         altarParticles.Play();
-        
+
         //Create copy of popup
         var popup = Instantiate(altarPopup, altarPopup.transform.parent);
         popup.SetActive(true);

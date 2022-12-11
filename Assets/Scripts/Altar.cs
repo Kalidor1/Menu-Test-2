@@ -36,7 +36,8 @@ public class Altar : MonoBehaviour
             text.GetComponentInChildren<TextMeshProUGUI>().text = "You sacrificed too much today";
             text.GetComponentInChildren<TextMeshProUGUI>().color = Color.white;
         }
-        else if (!GameController.Instance.atAltar)
+
+        if (!GameController.Instance.atAltar)
         {
             visible = false;
             foreach (Transform child in altarButtonContainer.transform)
@@ -79,7 +80,7 @@ public class Altar : MonoBehaviour
         {
             var button = Instantiate(altarButton, altarButtonContainer.transform);
             //move button down a bit
-            var offset = 30 * GameController.Instance.inventory.items.IndexOf(item);
+            var offset = 40 * GameController.Instance.inventory.items.IndexOf(item);
             button.transform.position += new Vector3(0, -offset, 0);
             button.GetComponentInChildren<TextMeshProUGUI>().text = item.Name;
             button.GetComponentInChildren<Button>().onClick.AddListener(() =>

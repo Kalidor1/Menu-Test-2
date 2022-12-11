@@ -19,6 +19,12 @@ public class EnemyController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        // random sound
+        if (Random.Range(0, 1000) == 1)
+        {
+            AudioController.Instance.PlaySound("Zombie");
+        }
     }
     private void OnTriggerEnter2D(Collider2D other)
     {

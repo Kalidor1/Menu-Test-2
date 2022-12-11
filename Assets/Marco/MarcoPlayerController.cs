@@ -65,6 +65,8 @@ public class MarcoPlayerController : MonoBehaviour
             var item = itemInReach.GetComponent<Item>();
             var sprite = itemInReach.GetComponent<SpriteRenderer>().sprite;
             GameController.Instance.inventory.AddItem(new InventoryItem(item, sprite));
+            AudioController.Instance.PlaySound("Pickup");
+
             Destroy(itemInReach);
         }
     }

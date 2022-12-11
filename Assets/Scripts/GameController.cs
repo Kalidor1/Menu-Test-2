@@ -122,6 +122,8 @@ public class GameController : Singleton<GameController>
             if (isInHouse) Player.transform.position = Spawn.transform.position;
             canEnter = false;
             spawnerActive = SpawnerType.Enemy;
+            AudioController.Instance.PlayMusic("NightMusic");
+
             for (int i = 21; i <= 31; i++)
             {
                 dayNightText.text = $"{GetTimeText(i)} (Night {Hub.Instance.daysSurvived})";
@@ -132,6 +134,8 @@ public class GameController : Singleton<GameController>
             sacrificed = 0;
             dayLength *= 0.9f;
             nightLength *= 1.1f;
+            AudioController.Instance.PlayMusic("DefaultMusic");
+
         }
     }
 

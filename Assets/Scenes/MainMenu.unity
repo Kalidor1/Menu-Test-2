@@ -636,7 +636,7 @@ PrefabInstance:
       objectReference: {fileID: 976225777}
     - target: {fileID: 5000381255430973067, guid: 5dd337289a549034c8b0234615f85d56, type: 3}
       propertyPath: dayLength
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5000381255430973067, guid: 5dd337289a549034c8b0234615f85d56, type: 3}
       propertyPath: dayNightText
@@ -699,6 +699,14 @@ PrefabInstance:
       propertyPath: fadeImage
       value: 
       objectReference: {fileID: 65385013}
+    - target: {fileID: 5798382270597714492, guid: bcc6f767146a70b438a38eac293e4889, type: 3}
+      propertyPath: fadeInTimeDefault
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5798382270597714492, guid: bcc6f767146a70b438a38eac293e4889, type: 3}
+      propertyPath: fadeOutTimeDefault
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5798382270597714493, guid: bcc6f767146a70b438a38eac293e4889, type: 3}
       propertyPath: m_RootOrder
       value: 4

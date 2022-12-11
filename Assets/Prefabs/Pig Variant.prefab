@@ -22,11 +22,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2119346028097152112, guid: 167d888a3e5edf74c8a82ed8a05de5b9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -5.22
       objectReference: {fileID: 0}
     - target: {fileID: 2119346028097152112, guid: 167d888a3e5edf74c8a82ed8a05de5b9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -13.47
       objectReference: {fileID: 0}
     - target: {fileID: 2119346028097152112, guid: 167d888a3e5edf74c8a82ed8a05de5b9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -62,7 +62,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2119346028097152116, guid: 167d888a3e5edf74c8a82ed8a05de5b9, type: 3}
       propertyPath: m_Name
-      value: Pig Variant
+      value: Pig
+      objectReference: {fileID: 0}
+    - target: {fileID: 2119346028097152117, guid: 167d888a3e5edf74c8a82ed8a05de5b9, type: 3}
+      propertyPath: m_Radius
+      value: 2.2728145
+      objectReference: {fileID: 0}
+    - target: {fileID: 2119346028097152117, guid: 167d888a3e5edf74c8a82ed8a05de5b9, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.05724936
       objectReference: {fileID: 0}
     - target: {fileID: 2119346028097152118, guid: 167d888a3e5edf74c8a82ed8a05de5b9, type: 3}
       propertyPath: name

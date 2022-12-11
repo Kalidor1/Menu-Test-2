@@ -7,6 +7,7 @@ using System.Reflection;
 using UnityEngine;
 using UnityEngine.UI;
 using Cinemachine;
+using UnityEngine.SceneManagement;
 
 public class GameController : Singleton<GameController>
 {
@@ -162,6 +163,7 @@ public class GameController : Singleton<GameController>
         RenderPlayerState();
 
 
+
         var vmcam = GameObject.Find("CM vcam1");
         if (vmcam != null)
         {
@@ -203,13 +205,13 @@ public class GameController : Singleton<GameController>
             }
         }
 
-        if (atAltar)
+        if (atAltar && inventoryText != null)
         {
             inventoryText.text = "";
             return;
         }
 
-        if (inventory != null)
+        if (inventory != null && inventoryText != null)
         {
             // Render inventory
             var items = inventory.items;

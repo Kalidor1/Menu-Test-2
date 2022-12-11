@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5000381255430973067
 MonoBehaviour:
@@ -75,7 +75,7 @@ MonoBehaviour:
   inventoryText: {fileID: 0}
   spawnerActive: 0
   dayLength: 1
-  nightLength: 2
+  nightLength: 4
   dayNightText: {fileID: 0}
   canEnter: 0
   isInHouse: 0
@@ -84,11 +84,12 @@ MonoBehaviour:
   attackSpeed: 0.5
   attackRange: 1
   pitchForkSize: 0.5
-  karmaEasterEgg: 1
+  isBanana: 0
+  karmaEasterEgg: 4
   Player: {fileID: 0}
   Spawn: {fileID: 0}
   altarPopup: {fileID: 0}
-  altarParticles: {fileID: 6492137837180955096, guid: c4190e5c25840124db97d6fe814f019f, type: 3}
+  altarParticles: {fileID: 0}
 --- !u!114 &5000381255430973062
 MonoBehaviour:
   m_ObjectHideFlags: 0

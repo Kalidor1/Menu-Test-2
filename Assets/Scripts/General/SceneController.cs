@@ -16,18 +16,20 @@ public class SceneController : PersistentSingleton<SceneController>
     /* VARIABLE DECLARATIONS                                                                                                    */
     /* ======================================================================================================================== */
 
-    [Header("Fade Image")] [SerializeField]
+    [Header("Fade Image")]
+    [SerializeField]
     private Image fadeImage;
 
     [SerializeField] private Color fadeImageColor = Color.black;
 
-    [Header("Fade Out")] [SerializeField] private float fadeOutTimeDefault = 0.3f;
+    [Header("Fade Out")][SerializeField] private float fadeOutTimeDefault = 0.3f;
     [SerializeField] private AnimationCurve fadeOutCurve = AnimationCurve.Linear(0f, 0f, 1f, 1f);
 
-    [Header("In Between")] [SerializeField]
+    [Header("In Between")]
+    [SerializeField]
     private float waitTimeDefault = 0.1f;
 
-    [Header("Fade In")] [SerializeField] private float fadeInTimeDefault = 0.3f;
+    [Header("Fade In")][SerializeField] private float fadeInTimeDefault = 0.3f;
     [SerializeField] private AnimationCurve fadeInCurve = AnimationCurve.Linear(1f, 1f, 0f, 0f);
 
     public static float fadeOutTime;
@@ -122,6 +124,7 @@ public class SceneController : PersistentSingleton<SceneController>
     [UsedImplicitly]
     public void LoadScene(string sceneName)
     {
+
         // todo: stop sound effect bus
         Time.timeScale = 1f;
         Instance.StartCoroutine(Instance.FadeOut(sceneName));
@@ -168,7 +171,7 @@ public class SceneController : PersistentSingleton<SceneController>
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else
-            Application.Quit ();
+        Application.Quit();
 #endif
     }
 

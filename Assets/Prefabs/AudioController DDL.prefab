@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5728245550169283007
 MonoBehaviour:
@@ -45,11 +45,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundClips:
-    m_keys: []
-    m_values: []
+    m_keys:
+    - click
+    - Hit
+    - Pickup
+    m_values:
+    - {fileID: 11400000, guid: e5105558dd35d87449ae4cc73ff21b6f, type: 2}
+    - {fileID: 11400000, guid: 094db1cedfdc5a747956dfaa5739ded5, type: 2}
+    - {fileID: 11400000, guid: 914edb1e2a99db941b96cbd8701c629f, type: 2}
   musicClips:
-    m_keys: []
-    m_values: []
+    m_keys:
+    - DefaultMusic
+    - AltarMusic
+    m_values:
+    - {fileID: 11400000, guid: 33720d1a64755d44982b189edd441eab, type: 2}
+    - {fileID: 11400000, guid: 3a919a6be64643741bd2994bdb4cb5e1, type: 2}
   musicVolume: 0.5
   soundVolume: 0.5
   defaultMusic: 

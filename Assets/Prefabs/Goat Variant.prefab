@@ -66,8 +66,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2119346028097152118, guid: 167d888a3e5edf74c8a82ed8a05de5b9, type: 3}
       propertyPath: name
-      value: Goat
+      value: Goat(e)
       objectReference: {fileID: 0}
+    - target: {fileID: 2119346028097152118, guid: 167d888a3e5edf74c8a82ed8a05de5b9, type: 3}
+      propertyPath: popUp
+      value: 
+      objectReference: {fileID: 21300000, guid: 3b60d489b598e3d4bbb305652e566ce1, type: 3}
     - target: {fileID: 2119346028097152118, guid: 167d888a3e5edf74c8a82ed8a05de5b9, type: 3}
       propertyPath: value
       value: 10
@@ -78,7 +82,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2119346028097152118, guid: 167d888a3e5edf74c8a82ed8a05de5b9, type: 3}
       propertyPath: description
-      value: like in the simulations
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2119346028097152119, guid: 167d888a3e5edf74c8a82ed8a05de5b9, type: 3}
       propertyPath: m_Sprite

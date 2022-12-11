@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 [Serializable]
 public class Health : MonoBehaviour
@@ -16,6 +17,15 @@ public class Health : MonoBehaviour
     public void Start()
     {
         currentHealth = MaxHealth;
+    }
+
+    public void Update()
+    {
+        var scene = SceneManager.GetActiveScene();
+        if(scene.name != "FinishedScene")
+        {
+            currentHealth = MaxHealth;
+        }
     }
 
     public void TakeDamage(int damage)

@@ -218,7 +218,7 @@ public class GameController : Singleton<GameController>
             var text = "";
             foreach (var item in items)
             {
-                text += item.Name + $" ({item.Description})\n";
+                text += $"{item.Name}\n";
             }
 
             inventoryText.text = text;

@@ -21,7 +21,22 @@ public class Altar : MonoBehaviour
             ShowAltar();
             visible = true;
         }
-        else if (!GameController.Instance.atAltar || !GameController.Instance.canSacrifice)
+        else if (!GameController.Instance.canSacrifice)
+        {
+            visible = false;
+            foreach (Transform child in altarButtonContainer.transform)
+            {
+                Destroy(child.gameObject);
+            }
+
+            //add text to altarButtonContainer
+            var text = Instantiate(altarButton, altarButtonContainer.transform);
+            text.GetComponentInChildren<Image>().enabled = false;
+
+            text.GetComponentInChildren<TextMeshProUGUI>().text = "You sacrificed too much today";
+            text.GetComponentInChildren<TextMeshProUGUI>().color = Color.white;
+        }
+        else if (!GameController.Instance.atAltar)
         {
             visible = false;
             foreach (Transform child in altarButtonContainer.transform)

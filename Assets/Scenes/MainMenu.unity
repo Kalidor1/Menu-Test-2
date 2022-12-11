@@ -1114,6 +1114,9 @@ MonoBehaviour:
   karmaEasterEgg: 1
   Player: {fileID: 0}
   Spawn: {fileID: 0}
+  sacrificed: 0
+  canSacrifice: 1
+  maxSacrificed: 3
 --- !u!4 &2012755678 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1212594851240079627, guid: f8ff5267bb24f564497ebdad6900051c, type: 3}
@@ -1390,6 +1393,10 @@ PrefabInstance:
     - target: {fileID: 7083044394704950787, guid: c46dde39e228cb7409a894f8a2a0568a, type: 3}
       propertyPath: m_Name
       value: GameCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7083044394704950787, guid: c46dde39e228cb7409a894f8a2a0568a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7083044394704950791, guid: c46dde39e228cb7409a894f8a2a0568a, type: 3}
       propertyPath: m_Pivot.x

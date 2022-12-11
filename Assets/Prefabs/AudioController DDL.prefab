@@ -49,19 +49,23 @@ MonoBehaviour:
     - click
     - Hit
     - Pickup
+    - Zombie
     m_values:
     - {fileID: 11400000, guid: e5105558dd35d87449ae4cc73ff21b6f, type: 2}
     - {fileID: 11400000, guid: 094db1cedfdc5a747956dfaa5739ded5, type: 2}
     - {fileID: 11400000, guid: 914edb1e2a99db941b96cbd8701c629f, type: 2}
+    - {fileID: 11400000, guid: 51812fdc0291c1947953a982a86cd272, type: 2}
   musicClips:
     m_keys:
     - DefaultMusic
     - AltarMusic
+    - NightMusic
     m_values:
     - {fileID: 11400000, guid: 33720d1a64755d44982b189edd441eab, type: 2}
     - {fileID: 11400000, guid: 3a919a6be64643741bd2994bdb4cb5e1, type: 2}
+    - {fileID: 11400000, guid: 00fb5813328834245b8fd048127441d2, type: 2}
   musicVolume: 0.5
   soundVolume: 0.5
-  defaultMusic: 
+  defaultMusic: DefaultMusic
   loopMusicPerDefault: 1
   cacheAudioListener: 1

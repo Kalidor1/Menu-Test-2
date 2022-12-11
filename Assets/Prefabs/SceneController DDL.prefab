@@ -107,7 +107,7 @@ Transform:
   m_Children:
   - {fileID: 5798382271007804281}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5798382270597714492
 MonoBehaviour:
@@ -123,7 +123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeImage: {fileID: 2729445880432067857}
   fadeImageColor: {r: 0, g: 0, b: 0, a: 1}
-  fadeOutTimeDefault: 0.3
+  fadeOutTimeDefault: 0.1
   fadeOutCurve:
     serializedVersion: 2
     m_Curve:
@@ -149,7 +149,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   waitTimeDefault: 0.1
-  fadeInTimeDefault: 0.3
+  fadeInTimeDefault: 0.1
   fadeInCurve:
     serializedVersion: 2
     m_Curve:

@@ -9,9 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5000381255430973060}
-  - component: {fileID: 5000381255430973067}
-  - component: {fileID: 5000381255430973062}
-  - component: {fileID: 5000381255430973061}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -32,87 +29,5 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5000381255430973067
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5000381255430973066}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26e19f12c79fee7458c03e2bed745bb7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  points: 0
-  level: 0
-  maxLevel: 5
-  gameState: 0
-  isPaused: 0
-  gameUi: {fileID: 0}
-  pauseUi: {fileID: 0}
-  levelText: {fileID: 0}
-  diedText: {fileID: 0}
-  finishedText: {fileID: 0}
-  restartButton: {fileID: 0}
-  fadeImage: {fileID: 0}
-  levels: []
-  playerHealth: {fileID: 0}
-  healthImages:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  fullHeart: {fileID: 21300000, guid: 9d1ac7f5320bf884188300d79a72909d, type: 3}
-  emptyHeart: {fileID: 21300000, guid: 9b672f4514ec91b4a8f1d47cca7ee02b, type: 3}
-  inventory: {fileID: 0}
-  atAltar: 0
-  altarButtonContainer: {fileID: 0}
-  altarButton: {fileID: 3616631829527612851, guid: d9e30c82b50e33d45bfacbeab9d783ce, type: 3}
-  inventoryText: {fileID: 0}
-  spawnerActive: 0
-  dayLength: 1
-  nightLength: 4
-  dayNightText: {fileID: 0}
-  canEnter: 0
-  isInHouse: 0
-  playerSpeed: 7
-  playerInvincibilityTime: 1
-  attackSpeed: 0.5
-  attackRange: 1
-  pitchForkSize: 0.5
-  isBanana: 0
-  karmaEasterEgg: 4
-  Player: {fileID: 0}
-  Spawn: {fileID: 0}
-  altarPopup: {fileID: 0}
-  altarParticles: {fileID: 0}
---- !u!114 &5000381255430973062
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5000381255430973066}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b93b5459612dd3a49a809f7216f6746d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHealth: 5
-  MaxHealth: 5
---- !u!114 &5000381255430973061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5000381255430973066}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5470af34193b5c5459a77cb7a05f7527, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

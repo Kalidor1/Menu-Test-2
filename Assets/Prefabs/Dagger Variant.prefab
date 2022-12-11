@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2119346028097152112, guid: 167d888a3e5edf74c8a82ed8a05de5b9, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2119346028097152112, guid: 167d888a3e5edf74c8a82ed8a05de5b9, type: 3}
       propertyPath: m_LocalScale.x
@@ -22,11 +22,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2119346028097152112, guid: 167d888a3e5edf74c8a82ed8a05de5b9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -33.280804
       objectReference: {fileID: 0}
     - target: {fileID: 2119346028097152112, guid: 167d888a3e5edf74c8a82ed8a05de5b9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 48.482395
       objectReference: {fileID: 0}
     - target: {fileID: 2119346028097152112, guid: 167d888a3e5edf74c8a82ed8a05de5b9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -63,6 +63,14 @@ PrefabInstance:
     - target: {fileID: 2119346028097152116, guid: 167d888a3e5edf74c8a82ed8a05de5b9, type: 3}
       propertyPath: m_Name
       value: Dagger Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2119346028097152117, guid: 167d888a3e5edf74c8a82ed8a05de5b9, type: 3}
+      propertyPath: m_Radius
+      value: 4.56104
+      objectReference: {fileID: 0}
+    - target: {fileID: 2119346028097152117, guid: 167d888a3e5edf74c8a82ed8a05de5b9, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.59665835
       objectReference: {fileID: 0}
     - target: {fileID: 2119346028097152118, guid: 167d888a3e5edf74c8a82ed8a05de5b9, type: 3}
       propertyPath: name

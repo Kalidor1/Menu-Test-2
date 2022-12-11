@@ -22,11 +22,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2119346028097152112, guid: 167d888a3e5edf74c8a82ed8a05de5b9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 15.9
       objectReference: {fileID: 0}
     - target: {fileID: 2119346028097152112, guid: 167d888a3e5edf74c8a82ed8a05de5b9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -4.99
       objectReference: {fileID: 0}
     - target: {fileID: 2119346028097152112, guid: 167d888a3e5edf74c8a82ed8a05de5b9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -62,7 +62,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2119346028097152116, guid: 167d888a3e5edf74c8a82ed8a05de5b9, type: 3}
       propertyPath: m_Name
-      value: Raccoon Variant
+      value: Raccoon
+      objectReference: {fileID: 0}
+    - target: {fileID: 2119346028097152117, guid: 167d888a3e5edf74c8a82ed8a05de5b9, type: 3}
+      propertyPath: m_Radius
+      value: 7.702273
+      objectReference: {fileID: 0}
+    - target: {fileID: 2119346028097152117, guid: 167d888a3e5edf74c8a82ed8a05de5b9, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.2308533
       objectReference: {fileID: 0}
     - target: {fileID: 2119346028097152118, guid: 167d888a3e5edf74c8a82ed8a05de5b9, type: 3}
       propertyPath: name

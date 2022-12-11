@@ -22,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8415528020633207048, guid: 60ca7726f765e3547953bb95910791cb, type: 3}
       propertyPath: description
-      value: They still did not notice
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8415528020633207049, guid: 60ca7726f765e3547953bb95910791cb, type: 3}
       propertyPath: m_Sprite
@@ -31,6 +31,14 @@ PrefabInstance:
     - target: {fileID: 8415528020633207050, guid: 60ca7726f765e3547953bb95910791cb, type: 3}
       propertyPath: m_Name
       value: Banana Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8415528020633207051, guid: 60ca7726f765e3547953bb95910791cb, type: 3}
+      propertyPath: m_Radius
+      value: 3.5197718
+      objectReference: {fileID: 0}
+    - target: {fileID: 8415528020633207051, guid: 60ca7726f765e3547953bb95910791cb, type: 3}
+      propertyPath: m_Offset.x
+      value: -1.3042066
       objectReference: {fileID: 0}
     - target: {fileID: 8415528020633207054, guid: 60ca7726f765e3547953bb95910791cb, type: 3}
       propertyPath: m_RootOrder

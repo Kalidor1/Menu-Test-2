@@ -5,14 +5,22 @@ using UnityEngine;
 public class DestroyInXSeconds : MonoBehaviour
 {
     public float seconds = 5f;
+    private bool isGameLoaded = false;
     // Start is called before the first frame update
 
     // Update is called once per frame
-    void Update()
+
+    private void Awake()
     {
-        if(Time.time > seconds)
-        {
-            Destroy(gameObject);
-        }
+        isGameLoaded = true;
+        StartCoroutine(Countdown());
+      
+    }
+
+
+    private IEnumerator Countdown()
+    {
+        yield return new WaitForSeconds(seconds);
+        Destroy(gameObject);
     }
 }

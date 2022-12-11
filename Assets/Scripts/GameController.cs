@@ -43,8 +43,6 @@ public class GameController : Singleton<GameController>
     [Header("Inventory")]
     public Inventory inventory;
     public bool atAltar;
-    // public GameObject altarButtonContainer;
-    // public GameObject altarButton;
     public TextMeshProUGUI inventoryText;
 
     [Header("Spawner")]
@@ -71,8 +69,9 @@ public class GameController : Singleton<GameController>
     public int karmaEasterEgg = 1;
     public GameObject Player;
     public GameObject Spawn;
-    // public GameObject altarPopup;
-    // public ParticleSystem altarParticles;
+    public int sacrificed = 0;
+    public bool canSacrifice = true;
+    public int maxSacrificed = 3;
 
     private void Awake()
     {
@@ -130,6 +129,7 @@ public class GameController : Singleton<GameController>
             }
 
             Hub.Instance.daysSurvived++;
+            sacrificed = 0;
             dayLength *= 0.9f;
             nightLength *= 1.1f;
         }
@@ -162,8 +162,6 @@ public class GameController : Singleton<GameController>
 
         RenderPlayerState();
 
-
-
         var vmcam = GameObject.Find("CM vcam1");
         if (vmcam != null)
         {
@@ -173,6 +171,8 @@ public class GameController : Singleton<GameController>
                 vcam.m_Lens.OrthographicSize = isInHouse ? 4 : 8;
             }
         }
+
+        canSacrifice = sacrificed < maxSacrificed;
     }
 
     private void RenderPlayerState()

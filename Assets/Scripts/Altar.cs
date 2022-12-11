@@ -16,12 +16,12 @@ public class Altar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameController.Instance.atAltar && !visible)
+        if (GameController.Instance.atAltar && !visible && GameController.Instance.canSacrifice)
         {
             ShowAltar();
             visible = true;
         }
-        else if (!GameController.Instance.atAltar)
+        else if (!GameController.Instance.atAltar || !GameController.Instance.canSacrifice)
         {
             visible = false;
             foreach (Transform child in altarButtonContainer.transform)
@@ -73,6 +73,7 @@ public class Altar : MonoBehaviour
                 StartCoroutine(ShowPopup(item));
                 GameController.Instance.ApplyStats(item);
                 GameController.Instance.karma++;
+                GameController.Instance.sacrificed++;
                 ShowAltar();
             });
         }

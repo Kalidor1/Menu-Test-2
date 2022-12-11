@@ -1097,8 +1097,6 @@ MonoBehaviour:
   emptyHeart: {fileID: 0}
   inventory: {fileID: 0}
   atAltar: 0
-  altarButtonContainer: {fileID: 0}
-  altarButton: {fileID: 0}
   inventoryText: {fileID: 0}
   spawnerActive: 0
   dayLength: 1
@@ -1112,11 +1110,10 @@ MonoBehaviour:
   attackRange: 1
   pitchForkSize: 1
   isBanana: 0
+  karma: 0
   karmaEasterEgg: 1
   Player: {fileID: 0}
   Spawn: {fileID: 0}
-  altarPopup: {fileID: 0}
-  altarParticles: {fileID: 0}
 --- !u!4 &2012755678 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1212594851240079627, guid: f8ff5267bb24f564497ebdad6900051c, type: 3}
@@ -1157,7 +1154,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.266}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 249, y: 90}
+  m_AnchoredPosition: {x: 173, y: 90}
   m_SizeDelta: {x: 339.9978, y: 262.2531}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2076638970

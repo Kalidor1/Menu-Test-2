@@ -47496,7 +47496,7 @@ MonoBehaviour:
   altarPopup: {fileID: 2476704833108117767}
   altarParticles: {fileID: 3277156682221833215}
   altarButtonContainer: {fileID: 1664921569}
-  altarButton: {fileID: 3370939249462328504, guid: 39a8e2f464125b04dba4d254d5dc010c, type: 3}
+  altarButton: {fileID: 8346970638749672604, guid: 39a8e2f464125b04dba4d254d5dc010c, type: 3}
 --- !u!1 &815145537
 GameObject:
   m_ObjectHideFlags: 3
@@ -54615,7 +54615,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 169, y: 1}
+  m_AnchoredPosition: {x: 274, y: 1}
   m_SizeDelta: {x: 73.07, y: 35.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1685132920
@@ -60168,7 +60168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}

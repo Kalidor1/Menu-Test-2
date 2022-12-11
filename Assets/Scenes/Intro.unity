@@ -764,6 +764,8 @@ MonoBehaviour:
   timeBtwChars: 0.07
   leadingChar: 
   leadingCharBeforeDelay: 0
+  TimeToWait: 5
+  SceneToLoad: FinishedScene
 --- !u!114 &1874113548
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -219,6 +219,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6329144306932545682, guid: 6639b070b9c960d41b4420b6a360e924, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6329144306932545682, guid: 6639b070b9c960d41b4420b6a360e924, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6329144306932545682, guid: 6639b070b9c960d41b4420b6a360e924, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1256501503}
+    - target: {fileID: 6329144306932545682, guid: 6639b070b9c960d41b4420b6a360e924, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6329144306932545682, guid: 6639b070b9c960d41b4420b6a360e924, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: PlaySoundFromUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 6329144306932545682, guid: 6639b070b9c960d41b4420b6a360e924, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: AudioController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6329144306932545682, guid: 6639b070b9c960d41b4420b6a360e924, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_StringArgument
+      value: click
+      objectReference: {fileID: 0}
+    - target: {fileID: 6329144306932545682, guid: 6639b070b9c960d41b4420b6a360e924, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 6639b070b9c960d41b4420b6a360e924, type: 3}
@@ -523,6 +555,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1256501503 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5728245550169283007, guid: 58812cbae39f90f408721f65a4bff710, type: 3}
+  m_PrefabInstance: {fileID: 130458691}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f5952f6177741346b37abed16a41f55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1321675909
 GameObject:
   m_ObjectHideFlags: 0
@@ -764,6 +807,26 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1481568290, guid: f8ff5267bb24f564497ebdad6900051c, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1481568291, guid: f8ff5267bb24f564497ebdad6900051c, type: 3}
+      propertyPath: m_text
+      value: Inventroy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1481568291, guid: f8ff5267bb24f564497ebdad6900051c, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 1481568293, guid: f8ff5267bb24f564497ebdad6900051c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 221
+      objectReference: {fileID: 0}
+    - target: {fileID: 1481568293, guid: f8ff5267bb24f564497ebdad6900051c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -130
+      objectReference: {fileID: 0}
     - target: {fileID: 2012755675, guid: f8ff5267bb24f564497ebdad6900051c, type: 3}
       propertyPath: MaxHealth
       value: 5

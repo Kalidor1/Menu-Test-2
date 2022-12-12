@@ -61,9 +61,9 @@ public class Altar : MonoBehaviour
         popup.GetComponentInChildren<SpriteRenderer>().sprite = item.PopUp;
 
         //Add upwards force
-        popup.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 200));
+        popup.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 75));
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(4);
 
         Destroy(popup);
     }
@@ -80,7 +80,7 @@ public class Altar : MonoBehaviour
         {
             var button = Instantiate(altarButton, altarButtonContainer.transform);
             //move button down a bit
-            var offset = 50 * GameController.Instance.inventory.items.IndexOf(item);
+            var offset = 100 * GameController.Instance.inventory.items.IndexOf(item);
             button.transform.position += new Vector3(0, -offset, 0);
             button.GetComponentInChildren<TextMeshProUGUI>().text = item.Name;
             button.GetComponentInChildren<Button>().onClick.AddListener(() =>
@@ -98,7 +98,7 @@ public class Altar : MonoBehaviour
         {
             var button = Instantiate(altarButton, altarButtonContainer.transform);
             //move button down a bit
-            var offset = 50 * GameController.Instance.inventory.items.Count;
+            var offset = 80 * GameController.Instance.inventory.items.Count;
             button.transform.position += new Vector3(0, -offset, 0);
             button.GetComponentInChildren<TextMeshProUGUI>().text = "Yourself";
             button.GetComponentInChildren<Button>().onClick.AddListener(() =>
